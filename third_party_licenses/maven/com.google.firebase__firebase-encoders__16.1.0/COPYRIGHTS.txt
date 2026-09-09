@@ -1,0 +1,5 @@
+Copyright statements retained from the publisher source archive for com.google.firebase:firebase-encoders:16.1.0.
+These are component notices, not a license for Pokecode.
+
+Copyright 2019 Google LLC
+Copyright 2020 Google LLC

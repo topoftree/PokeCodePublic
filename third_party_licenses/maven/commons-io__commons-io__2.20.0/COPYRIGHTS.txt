@@ -1,0 +1,4 @@
+Copyright statements retained from the publisher source archive for commons-io:commons-io:2.20.0.
+These are component notices, not a license for Pokecode.
+
+Copyright 2002-2025 The Apache Software Foundation

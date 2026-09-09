@@ -1,0 +1,11 @@
+Copyright statements retained from the publisher source archive for androidx.compose.foundation:foundation-layout-android:1.11.3.
+These are component notices, not a license for Pokecode.
+
+Copyright 2019 The Android Open Source Project
+Copyright 2020 The Android Open Source Project
+Copyright 2021 The Android Open Source Project
+Copyright 2022 The Android Open Source Project
+Copyright 2023 The Android Open Source Project
+Copyright 2024 The Android Open Source Project
+Copyright 2025 The Android Open Source Project
+Copyright 2026 The Android Open Source Project

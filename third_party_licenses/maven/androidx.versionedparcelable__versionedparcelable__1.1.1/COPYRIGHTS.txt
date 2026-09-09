@@ -1,0 +1,4 @@
+Copyright statements retained from the publisher source archive for androidx.versionedparcelable:versionedparcelable:1.1.1.
+These are component notices, not a license for Pokecode.
+
+Copyright 2018 The Android Open Source Project

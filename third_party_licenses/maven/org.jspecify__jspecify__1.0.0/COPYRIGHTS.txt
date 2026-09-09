@@ -1,0 +1,5 @@
+Copyright statements retained from the publisher source archive for org.jspecify:jspecify:1.0.0.
+These are component notices, not a license for Pokecode.
+
+Copyright 2018-2020 The JSpecify Authors.
+Copyright 2022 The JSpecify Authors.

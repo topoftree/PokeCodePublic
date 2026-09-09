@@ -1,0 +1,4 @@
+Copyright statements retained from the publisher source archive for com.google.j2objc:j2objc-annotations:1.3.
+These are component notices, not a license for Pokecode.
+
+Copyright 2012 Google Inc. All Rights Reserved.

@@ -1,0 +1,4 @@
+Copyright statements retained from the publisher source archive for org.apache.commons:commons-compress:1.28.0.
+These are component notices, not a license for Pokecode.
+
+Copyright 2002-2025 The Apache Software Foundation

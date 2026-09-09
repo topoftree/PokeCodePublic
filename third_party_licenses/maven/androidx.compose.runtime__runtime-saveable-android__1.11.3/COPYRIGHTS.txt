@@ -1,0 +1,6 @@
+Copyright statements retained from the publisher source archive for androidx.compose.runtime:runtime-saveable-android:1.11.3.
+These are component notices, not a license for Pokecode.
+
+Copyright 2020 The Android Open Source Project
+Copyright 2021 The Android Open Source Project
+Copyright 2025 The Android Open Source Project

@@ -1,0 +1,4 @@
+Copyright statements retained from the publisher source archive for androidx.emoji2:emoji2-views-helper:1.4.0.
+These are component notices, not a license for Pokecode.
+
+Copyright 2021 The Android Open Source Project

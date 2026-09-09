@@ -1,0 +1,8 @@
+Copyright statements retained from the publisher source archive for androidx.compose.ui:ui-util-android:1.11.3.
+These are component notices, not a license for Pokecode.
+
+Copyright 2019 The Android Open Source Project
+Copyright 2020 The Android Open Source Project
+Copyright 2023 The Android Open Source Project
+Copyright 2025 The Android Open Source Project
+Copyright 2026 The Android Open Source Project

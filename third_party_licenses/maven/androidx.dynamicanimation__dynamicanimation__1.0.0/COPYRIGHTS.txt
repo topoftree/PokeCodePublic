@@ -1,0 +1,4 @@
+Copyright statements retained from the publisher source archive for androidx.dynamicanimation:dynamicanimation:1.0.0.
+These are component notices, not a license for Pokecode.
+
+Copyright (C) 2017 The Android Open Source Project

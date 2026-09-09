@@ -1,0 +1,4 @@
+Copyright statements retained from the publisher source archive for javax.inject:javax.inject:1.
+These are component notices, not a license for Pokecode.
+
+Copyright (C) 2009 The JSR-330 Expert Group

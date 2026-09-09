@@ -1,0 +1,5 @@
+Copyright statements retained from the publisher source archive for androidx.annotation:annotation-experimental:1.4.1.
+These are component notices, not a license for Pokecode.
+
+Copyright 2019 The Android Open Source Project
+Copyright 2020 The Android Open Source Project

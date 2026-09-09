@@ -1,0 +1,4 @@
+Copyright statements retained from the publisher source archive for androidx.core:core-viewtree:1.0.0.
+These are component notices, not a license for Pokecode.
+
+Copyright 2024 The Android Open Source Project

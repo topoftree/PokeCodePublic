@@ -1,0 +1,8 @@
+Copyright statements retained from the publisher source archive for com.google.errorprone:error_prone_annotations:2.7.1.
+These are component notices, not a license for Pokecode.
+
+Copyright 2014 The Error Prone Authors.
+Copyright 2015 The Error Prone Authors.
+Copyright 2016 The Error Prone Authors.
+Copyright 2017 The Error Prone Authors.
+Copyright 2021 The Error Prone Authors.

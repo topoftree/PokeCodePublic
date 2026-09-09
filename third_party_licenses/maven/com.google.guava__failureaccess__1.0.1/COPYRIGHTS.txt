@@ -1,0 +1,4 @@
+Copyright statements retained from the publisher source archive for com.google.guava:failureaccess:1.0.1.
+These are component notices, not a license for Pokecode.
+
+Copyright (C) 2018 The Guava Authors

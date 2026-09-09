@@ -1,0 +1,8 @@
+Copyright statements retained from the publisher source archive for androidx.activity:activity-compose:1.13.0.
+These are component notices, not a license for Pokecode.
+
+Copyright 2021 The Android Open Source Project
+Copyright 2022 The Android Open Source Project
+Copyright 2023 The Android Open Source Project
+Copyright 2024 The Android Open Source Project
+Copyright 2025 The Android Open Source Project

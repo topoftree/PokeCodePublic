@@ -1,0 +1,4 @@
+Copyright statements retained from the publisher source archive for org.apache.commons:commons-lang3:3.18.0.
+These are component notices, not a license for Pokecode.
+
+Copyright 2001-2025 The Apache Software Foundation

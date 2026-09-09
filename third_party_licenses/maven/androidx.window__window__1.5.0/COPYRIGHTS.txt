@@ -1,0 +1,9 @@
+Copyright statements retained from the publisher source archive for androidx.window:window:1.5.0.
+These are component notices, not a license for Pokecode.
+
+Copyright (C) 2024 The Android Open Source Project
+Copyright 2021 The Android Open Source Project
+Copyright 2022 The Android Open Source Project
+Copyright 2023 The Android Open Source Project
+Copyright 2024 The Android Open Source Project
+Copyright 2025 The Android Open Source Project

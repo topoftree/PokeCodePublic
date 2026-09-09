@@ -1,0 +1,4 @@
+Copyright statements retained from the publisher source archive for androidx.resourceinspection:resourceinspection-annotation:1.0.1.
+These are component notices, not a license for Pokecode.
+
+Copyright 2021 The Android Open Source Project

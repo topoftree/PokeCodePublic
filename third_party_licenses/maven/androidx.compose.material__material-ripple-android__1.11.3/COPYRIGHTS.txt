@@ -1,0 +1,6 @@
+Copyright statements retained from the publisher source archive for androidx.compose.material:material-ripple-android:1.11.3.
+These are component notices, not a license for Pokecode.
+
+Copyright 2019 The Android Open Source Project
+Copyright 2020 The Android Open Source Project
+Copyright 2021 The Android Open Source Project

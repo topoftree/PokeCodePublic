@@ -1,0 +1,4 @@
+Copyright statements retained from the publisher source archive for androidx.tracing:tracing:1.2.0.
+These are component notices, not a license for Pokecode.
+
+Copyright 2020 The Android Open Source Project
