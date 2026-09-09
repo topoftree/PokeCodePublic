@@ -1,6 +1,6 @@
 # Pokecode
 
-Pokecode is an Android workspace for organizing notes and projects, preparing structured prompts, and working with Chat and an embedded terminal on your phone.
+Pokecode is an Android phone workspace for vibecoding with AI agents such as Codex. Organize notes and projects, prepare structured prompts, and build and iterate through Chat and an embedded terminal, with your development environment running locally on your phone.
 
 ## Overview
 
@@ -17,6 +17,7 @@ This is Pokecode's public distribution and documentation repository. APK downloa
 - Trash with restoration of deleted Notes and Blocks.
 - Export Notes as Word documents (`.docx`), UTF-8 text, or PDF.
 - Chat sessions with attachments, streamed responses, and task controls.
+- AI-assisted vibecoding with Codex in a local development environment on your Android phone.
 - An embedded terminal and an Ubuntu installation workflow.
 - Local HTML previews, light and dark themes, and session progress notifications.
 
