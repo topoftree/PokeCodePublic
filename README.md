@@ -16,9 +16,10 @@ This is Pokecode's public distribution and documentation repository. APK downloa
 - Time Capsule for browsing saved submission snapshots by date.
 - Trash with restoration of deleted Notes and Blocks.
 - Export Notes as Word documents (`.docx`), UTF-8 text, or PDF.
-- Chat sessions with attachments, streamed responses, and task controls.
+- Chat sessions with attachments, a pen/eraser sketch editor, streamed responses, and task controls.
 - AI-assisted vibecoding with Codex in a local development environment on your Android phone.
-- An embedded terminal and an Ubuntu installation workflow.
+- An embedded terminal with light and dark palettes, resumable initialization, and Codex sign-in.
+- Background backup and restore with progress notifications and cancellation controls.
 - Local HTML previews, light and dark themes, and session progress notifications.
 
 External services, accounts, downloaded tools, and model availability can affect individual workflows. Ubuntu and external AI services require separate setup; they are not provided by this repository.
@@ -31,13 +32,13 @@ Screenshots will be added here after review. Planned views: Notes and Blocks, Pr
 
 Visit [Pokecode Releases](https://github.com/topoftree/PokeCodePublic/releases) for official APKs, release notes, SHA-256 checksums, and accompanying third-party materials.
 
-Download [Pokecode-v0.1.6.2.15.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.2.15/Pokecode-v0.1.6.2.15.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.2.15/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
+Download [Pokecode-v0.1.6.4.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.4/Pokecode-v0.1.6.4.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.4/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
 
 ## Latest release
 
-The latest release is [**Pokecode 0.1.6.2.15**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.6.2.15) (Android version code **259**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
+The latest release is [**Pokecode 0.1.6.4**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.6.4) (Android version code **264**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
 
-This release optimizes opening large Notes and expands the bundled third-party notices. The release notes also document the unresolved redistribution review and a known terminal utility limitation.
+This release adds resumable initialization and Codex sign-in, light Terminal rendering, Chat sketch attachments, background backup/restore, and simpler Project Settings. It also improves Chat readiness and interactive choices and restores screenshot support. The application ID changes to `com.pokecode`, so existing users must follow the migration instructions below.
 
 ## Installation instructions
 
@@ -46,6 +47,8 @@ This release optimizes opening large Notes and expands the bundled third-party n
 3. Open the APK using Android's file manager or your browser's download list.
 4. If Android requests it, allow that browser or file manager to install unknown apps, then return to the installer.
 5. Install and open Pokecode. You can turn off that installation permission afterward.
+
+For a fresh environment, open Chat and select **Start initialization**, then follow setup and finish with **Sign in**, **Device code**, or **API key**. Setup requires internet access. AI services may also require an account and internet access even though the development environment runs locally on your phone.
 
 Installation screens vary by manufacturer. If Android refuses the installation, check your Android version and CPU architecture before reporting the error. Do not disable Android's security checks to force an incompatible installation.
 
@@ -56,20 +59,29 @@ Installation screens vary by manufacturer. If Android refuses the installation, 
 | Minimum Android version | Android 13 (API 33) |
 | Target Android version | Android 16 (API 36) |
 | CPU architecture | ARM64 (`arm64-v8a`) |
-| Application ID | `com.claude.note` |
+| Application ID | `com.pokecode` |
 | Distribution build | Signed release APK |
 
 Internet access is needed for external services and runtime downloads. Some features depend on capabilities available on the device. Downloaded Ubuntu environments need additional storage beyond the APK.
 
 ## Updating Pokecode
 
-Download the newer APK from Releases, verify its checksum, and install it over your existing installation. Updates must have the same application ID and a compatible signing certificate. Android rejects updates signed with an unrelated key.
+**Moving from v0.1.6.2.15 or another `com.claude.note` installation:** v0.1.6.4 uses `com.pokecode` and installs as a separate app, even though it retains the signing certificate.
+
+1. In the old app, use **Settings → Back up** and save the selected categories to a shared folder such as **Download**.
+2. Install the new APK, then use **Settings → Restore** in the new app to select that ZIP.
+3. After validation, select the categories to restore. **Run in background** lets the operation continue while you navigate.
+4. Check your Notes, Projects, Chat history, attachments, and runtime before deciding whether to remove the old app.
+
+Restore replaces the selected categories in the new app. It does not automatically read or delete the old installation's private data. End-to-end migration on a device remains a manual validation item.
+
+For future updates with the same `com.pokecode` application ID, download the newer APK, verify its checksum, and install it over the existing app. Updates must have a compatible signing certificate; Android rejects updates signed with an unrelated key.
 
 Export important Notes before updating. Avoid uninstalling to work around a signature error: uninstalling can remove application data. Report the error and the versions involved instead.
 
 ## Security and APK verification
 
-Release 0.1.6.2.15 provides a `SHA256SUMS.txt` entry for the exact APK. In Termux or another shell with `sha256sum`, place the two downloaded files in the same directory and run:
+Release 0.1.6.4 provides a `SHA256SUMS.txt` entry for the exact APK. In Termux or another shell with `sha256sum`, place the two downloaded files in the same directory and run:
 
 ```sh
 sha256sum -c SHA256SUMS.txt
