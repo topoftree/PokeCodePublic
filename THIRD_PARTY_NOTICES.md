@@ -1,8 +1,8 @@
 # Third-party notices for Pokecode
 
-Candidate: **0.1.6.2.15**. Review date: **2026-09-09**.
+Release: **0.1.6.2.15**. Review date: **2026-09-09**.
 
-**Publication is on hold.** This notice inventory is a prepared draft. Source-delivery, copyleft integration, and SDK restrictions still require resolution before this candidate can be distributed. Generating notices is not a finding of legal compliance.
+**Redistribution review remains incomplete.** Release 0.1.6.2.15 is published with unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
 Pokecode itself is proprietary. These licenses apply only to their identified third-party components. They do not license Pokecode's application source. Any Pokecode terms must preserve the rights granted by the third-party licenses, including applicable source, modification and reverse-engineering rights.
 
@@ -30,7 +30,9 @@ The proposed source delivery is a versioned third-party source archive beside th
 
 ## Notices during execution
 
-No reviewed license establishes a universal requirement for a screen named “Open Source Licenses.” Apache notices can be placed in appropriate accompanying notices/documentation. LGPLv3 section 4(c), however, requires library copyright and license references when the combined work displays copyright notices during execution; modified interactive GPL programs can have additional notice requirements. PRoot's `--version` output displays its copyright but currently lacks a talloc reference. The precise runtime notice changes and accessible offline license location remain a release gate. GitHub-only notices have not been established as sufficient for this candidate, and no unrelated UI redesign has been made.
+No reviewed license establishes a universal requirement for a screen named “Open Source Licenses.” Apache notices can be placed in appropriate accompanying notices/documentation. LGPLv3 section 4(c), however, requires library copyright and license references when the combined work displays copyright notices during execution; modified interactive GPL programs can have additional notice requirements. PRoot's `--version` output displays its copyright but currently lacks a talloc reference. The precise runtime notice changes and accessible offline license location remain unresolved. GitHub-only notices have not been established as sufficient for this release, and no unrelated UI redesign has been made.
+
+The signed APK retains its pre-publication notice snapshots. This repository records the current publication status; the outstanding obligations described in those snapshots have not been resolved by publication.
 
 ## Android libraries and SDKs
 

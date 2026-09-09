@@ -1,6 +1,6 @@
 # Google SDK notice
 
-The Pokecode 0.1.6.2.15 candidate uses Google ML Kit for Chat voice input and includes the following Google SDK artifacts:
+Pokecode 0.1.6.2.15 uses Google ML Kit for Chat voice input and includes the following Google SDK artifacts:
 
 | Component | Version | Publisher terms |
 | --- | --- | --- |
@@ -17,4 +17,4 @@ Google states that ML Kit input processing takes place on the device and that ML
 
 The publisher must provide an accurate application privacy policy and appropriate user disclosures before distribution. The GenAI terms also require review of age/audience limitations, permitted uses, and the production eligibility of the selected API version. An `alpha` or `beta` artifact name alone is not a definitive interpretation of Google's contractual preview restrictions.
 
-This file records the candidate's SDKs and outstanding review. It does not assert that all publisher obligations have been fulfilled.
+This file records the release's SDKs and outstanding review. Publication does not assert that all publisher obligations have been fulfilled.
