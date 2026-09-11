@@ -2,7 +2,7 @@
 
 
 
-[Support PokeCode on GoFundMe](https://gofund.me/1834d1dbf)
+🤜[Support PokeCode on GoFundMe](https://gofund.me/1834d1dbf)
 
 PokeCode is an independent project that I’m actively developing and maintaining. If you find the project useful, believe in what I’m building, or simply want to support its continued development, you can help by contributing to my GoFundMe.
 
