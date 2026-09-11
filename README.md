@@ -1,3 +1,17 @@
+
+
+
+
+Support the project on GoFundMe: gofund.me/1834d1dbf
+
+PokeCode is an independent project that I’m actively developing and maintaining. If you find the project useful, believe in what I’m building, or simply want to support its continued development, you can help by contributing to my GoFundMe.
+
+Your support will help cover development costs, testing devices, better development hardware, and the time needed to keep improving PokeCode—including better support for foldable devices, AI-assisted development workflows, and new features.
+
+Any amount of support is greatly appreciated and helps me spend more time making PokeCode better.
+
+
+
 # Pokecode
 
 Pokecode is an Android phone workspace for vibecoding with AI agents such as Codex. Organize notes and projects, prepare structured prompts, and build and iterate through Chat and an embedded terminal, with your development environment running locally on your phone.
