@@ -22,6 +22,12 @@ Keep written material in Notes, organize it into Blocks and Subblocks, and group
 
 This is Pokecode's public distribution and documentation repository. APK downloads belong in GitHub Releases; application source and development configuration are maintained privately.
 
+## Prompt management
+
+Use Notes as a working library for your prompts. Write instructions, split related tasks into Blocks and Subblocks, and organize them by Project. Reusable Custom Templates save common prompt instructions and version settings so you can apply them to future work.
+
+Send a Block individually, or link several Blocks into a versioned group. Launcher lets you review pending groups before sending, while Time Capsule keeps snapshots of previous submissions so you can check exactly what was sent. Your working Notes and submission history stay accessible as you iterate with an AI agent.
+
 ## Main features
 
 - Notes with editable Blocks and Subblocks, pinning, and search.
@@ -41,23 +47,40 @@ This is Pokecode's public distribution and documentation repository. APK downloa
 
 External services, accounts, downloaded tools, and model availability can affect individual workflows. Ubuntu and external AI services require separate setup; they are not provided by this repository.
 
+Compiled Android previews require the Project's Gradle/JDK/Android SDK setup; XML also offers a limited draft renderer.
+
 ## Screenshots
 
-Screenshots will be added here after review. Planned views: Notes and Blocks, Project workspaces, Chat, and Terminal. No screenshots containing private notes, conversations, account information, or credentials are published.
+Screenshots supplied by the author. Tap an image to view it at full size. The Preview screenshot shows an earlier interface; the current release uses the file picker and Start/Pause/Resume/Stop controls described above.
+
+<table>
+  <tr>
+    <td align="center"><strong>1. Chat</strong><br><a href="screenshots/01-chat.png"><img src="screenshots/01-chat.png" width="260" alt="Pokecode Chat with demo prompts"></a></td>
+    <td align="center"><strong>2. Terminal</strong><br><a href="screenshots/02-terminal.png"><img src="screenshots/02-terminal.png" width="260" alt="Pokecode embedded Terminal running Codex"></a></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>3. Chat start</strong><br><a href="screenshots/03-chat-start.png"><img src="screenshots/03-chat-start.png" width="260" alt="Pokecode Chat start screen"></a></td>
+    <td align="center"><strong>4. Blocks and Subblocks</strong><br><a href="screenshots/04-note-blocks.png"><img src="screenshots/04-note-blocks.png" width="260" alt="Pokecode Note editor with a Block and three Subblocks"></a></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>5. Preview (earlier interface)</strong><br><a href="screenshots/05-preview-earlier-ui.png"><img src="screenshots/05-preview-earlier-ui.png" width="260" alt="Pokecode Preview page in an earlier interface"></a></td>
+    <td></td>
+  </tr>
+</table>
 
 ## Download
 
 Visit [Pokecode Releases](https://github.com/topoftree/PokeCodePublic/releases) for official APKs, release notes, SHA-256 checksums, and accompanying third-party materials.
 
-Download [Pokecode-v0.1.6.8.5.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.8.5/Pokecode-v0.1.6.8.5.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.8.5/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
+Download [Pokecode-v0.1.6.8.6.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.8.6/Pokecode-v0.1.6.8.6.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.8.6/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
 
 ## Latest release
 
-The latest release is [**Pokecode 0.1.6.8.5**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.6.8.5) (Android version code **297**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
+The latest release is [**Pokecode 0.1.6.8.6**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.6.8.6) (Android version code **298**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
 
-Since v0.1.6.4, Preview follows the opened Chat conversation, discovers files in that session’s workspace, and renders only after Start is tapped. Pause/Resume preserves the run; the separate Stop control ends it. Supported Android previews require the Project’s Gradle/JDK/SDK setup; XML also offers a limited draft renderer.
+This update centers the existing empty-state content in Unclassified/Notes and the empty Note editor. Project Settings keeps the focused Starting version, Components or Carry base input above the keyboard. Preview address taps give light haptic feedback; tapping outside clears text selection while preserving the path, expanded state and selected file.
 
-This release also improves Block expansion, deletion and Undo/Redo persistence, Notes drawer/Back gestures, shared Template renaming and Project mode selection, Chat permission-change resumption, GitHub sign-in, and runtime update/repair. Android App Projects can enable prompt Preview mode to defer APK builds until explicitly confirmed.
+The session Preview controls, prompt-management tools and other features from v0.1.6.8.5 remain available. The third-party dependency and licensing inventory is unchanged from that release; the existing notices and outstanding obligations still apply.
 
 The application ID remains `com.pokecode`. Users of v0.1.6.4 can install this signed update over the existing app; older `com.claude.note` installations still need the migration below.
 
@@ -102,7 +125,7 @@ Export important Notes before updating. Avoid uninstalling to work around a sign
 
 ## Security and APK verification
 
-Release 0.1.6.8.5 provides a `SHA256SUMS.txt` entry for the exact APK. In Termux or another shell with `sha256sum`, place the two downloaded files in the same directory and run:
+Release 0.1.6.8.6 provides a `SHA256SUMS.txt` entry for the exact APK. In Termux or another shell with `sha256sum`, place the two downloaded files in the same directory and run:
 
 ```sh
 sha256sum -c SHA256SUMS.txt
