@@ -64,7 +64,15 @@ Screenshots supplied by the author. Tap an image to view it at full size. The Pr
   </tr>
   <tr>
     <td align="center"><strong>5. Preview (earlier interface)</strong><br><a href="screenshots/05-preview-earlier-ui.png"><img src="screenshots/05-preview-earlier-ui.png" width="260" alt="Pokecode Preview page in an earlier interface"></a></td>
-    <td></td>
+    <td align="center"><strong>6. Notes</strong><br><a href="screenshots/06-notes.png"><img src="screenshots/06-notes.png" width="260" alt="Pokecode Notes page with note cards and content previews"></a></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>7. Launcher empty state</strong><br><a href="screenshots/07-launcher-empty.png"><img src="screenshots/07-launcher-empty.png" width="260" alt="Pokecode Launcher with no pending blocks"></a></td>
+    <td align="center"><strong>8. Time Capsule history</strong><br><a href="screenshots/08-time-capsule-history.png"><img src="screenshots/08-time-capsule-history.png" width="260" alt="Pokecode Time Capsule with dated, versioned submission snapshots"></a></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>9. Launcher prompt group</strong><br><a href="screenshots/09-launcher-group.png"><img src="screenshots/09-launcher-group.png" width="260" alt="Pokecode Launcher with a pending versioned prompt group and send, copy, and share controls"></a></td>
+    <td align="center"><strong>10. Time Capsule calendar</strong><br><a href="screenshots/10-time-capsule-calendar.png"><img src="screenshots/10-time-capsule-calendar.png" width="260" alt="Pokecode Time Capsule calendar with saved submissions for the selected day"></a></td>
   </tr>
 </table>
 
