@@ -1,6 +1,6 @@
 # Google SDK notice
 
-Pokecode 0.1.6.4 uses Google ML Kit for Chat voice input and includes the following Google SDK artifacts, unchanged from v0.1.6.2.15:
+Pokecode 0.1.6.8.5 uses Google ML Kit for Chat voice input and includes the following Google SDK artifacts, unchanged from the previous public release v0.1.6.4:
 
 | Component | Version | Publisher terms |
 | --- | --- | --- |

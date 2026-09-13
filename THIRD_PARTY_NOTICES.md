@@ -1,8 +1,8 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.6.4**. Original inventory review: **2026-09-09**; release changes reviewed **2026-09-10**.
+Release: **0.1.6.8.5**. Original inventory review: **2026-09-09**; release changes reviewed **2026-09-13**.
 
-**Redistribution review remains incomplete.** Release 0.1.6.4 is published with unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
+**Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
 Pokecode itself is proprietary. These licenses apply only to their identified third-party components. They do not license Pokecode's application source. Any Pokecode terms must preserve the rights granted by the third-party licenses, including applicable source, modification and reverse-engineering rights.
 
@@ -13,6 +13,14 @@ The review covers 15 explicit production dependency declarations and 116 resolve
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes since v0.1.6.4
+
+The production dependency declarations and packaged Maven version markers are unchanged. The native shared libraries, bootstrap, embedded package repository, bundled third-party source archives and license text files match the previous public APK byte-for-byte. No new or upgraded copyleft component was identified in the APK delta; existing obligations below remain unresolved.
+
+Pokecode modified the existing Apache-licensed terminal emulator for incremental row revisions and text projection. New UI actions use the already listed Material icon collection. The updated system icon is derived from the existing Pokecode artwork; the Live Notification now uses twelve owner-supplied UFO frames. No new third-party font or model weight was added.
+
+The added authentication, Codex runtime and Preview helpers are Pokecode integration code. GitHub CLI is installed separately during environment setup and has an [MIT license](https://github.com/cli/cli/blob/trunk/LICENSE); it is not embedded in this APK. Downloaded tools and user-installed global packages retain their own terms.
 
 ### Changes in v0.1.6.4
 
@@ -171,7 +179,7 @@ AndroidX Graphics Path also contains native code and Apache-licensed math header
 
 The terminal emulator and terminal view derive from Termux app **v0.118.3**, commit `5b657c6adf4304e5198951ce815fe0205dcac29c`. The upstream [license statement](https://github.com/termux/termux-app/blob/v0.118.3/LICENSE.md) expressly places these modules under the Apache-2.0 terminal-emulator exception. The whole Termux application is not being represented as Apache-licensed.
 
-Original copyrights remain with the Android Terminal Emulator, Termux and other named contributors. Pokecode changes include Java package/JNI renaming, integration with its workspace, a PTY string-release correction and an echo-state query. Version 0.1.6.4 also adds light-theme rendering and appearance updates that preserve the terminal session, selection, and viewport. The original [module license statement](third_party_licenses/runtime/terminal-emulator/LICENSE.md) and [Apache text](third_party_licenses/Apache-2.0.txt) are preserved. Final copied-file attribution comparison remains part of review.
+Original copyrights remain with the Android Terminal Emulator, Termux and other named contributors. Pokecode changes include Java package/JNI renaming, integration with its workspace, a PTY string-release correction and an echo-state query. Version 0.1.6.4 also adds light-theme rendering and appearance updates that preserve the terminal session, selection, and viewport. Version 0.1.6.8.5 additionally modifies `TerminalBuffer` and `TerminalRow` for incremental revisions and immutable row projections. The original [module license statement](third_party_licenses/runtime/terminal-emulator/LICENSE.md) and [Apache text](third_party_licenses/Apache-2.0.txt) are preserved. Final copied-file attribution comparison remains part of review.
 
 ## Embedded native and command-line runtime
 
@@ -253,7 +261,8 @@ These are package records, not an additive count of entirely independent upstrea
 
 | Resource | Version / provenance | License and required treatment |
 | --- | --- | --- |
-| Pokecode icon1, icon2 and six UFO images/derived frames | Owner confirmed ChatGPT generation on 2026-09-09 | Owner-provided artwork; not assigned a third-party open-source license. The statement resolves the reported provenance question, not every possible trademark or third-party-right issue. |
+| Pokecode icon1/icon2 and derived system/adaptive/monochrome icons | Owner confirmed original icon artwork was ChatGPT-generated on 2026-09-09; system variants derive from that artwork | Owner-provided artwork; not assigned a third-party open-source license. This records supplied provenance, not a trademark or third-party-right warranty. |
+| Twelve UFO animation frames | Owner-supplied numbered sequence imported for v0.1.6.5.3, with cropping, transparency and scaling | Replaces the earlier six-frame artwork. No third-party open-source license is assigned; the older six-image ChatGPT confirmation is not treated as independent verification of this replacement sequence. |
 | Compose Material icons | 1.7.8 release artifacts | Apache-2.0; original component notices retained above. |
 | Mozilla/curl certificate store | 2026-07-16 | MPL-2.0; exact published PEM hash matched the bundled file. Preserve source data and notices. |
 | rxvt-unicode terminal descriptions | 9.31 | GPL-3.0-or-later per original source; only compiled terminal data is bundled, not the terminal application. Source inputs staged. |
