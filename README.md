@@ -30,16 +30,17 @@ Send a Block individually, or link several Blocks into a versioned group. Launch
 
 ## Main features
 
-- Notes with editable Blocks and Subblocks, pinning, and search.
+- Notes with editable Blocks and Subblocks, Cut/Paste, pinning, search, and progressive loading for large Notes.
 - Project workspaces, Categories with selectable icons, and reusable templates with shared names.
-- Launcher for preparing linked content for sessions.
+- Launcher for preparing linked content and selecting multiple Blocks to unlink from a group while keeping the original Note content.
 - Time Capsule for browsing saved submission snapshots by date.
 - Trash with restoration of deleted Notes and Blocks.
 - Export Notes as Word documents (`.docx`), UTF-8 text, or PDF.
-- Chat sessions with attachments, a pen/eraser sketch editor, streamed responses, and task controls.
+- Chat sessions with attachments, a pen/eraser sketch editor, streamed responses, task controls, and interactive Codex follow-up questions.
 - AI-assisted vibecoding with Codex in a local development environment on your Android phone.
 - An embedded terminal with light and dark palettes, resumable initialization, and Codex/GitHub sign-in.
-- Terminal settings for runtime updates, dependency repair and global Bun package updates that preserve Project dependencies.
+- Terminal settings for runtime updates, dependency repair, optional-plugin update warnings, and global Bun package updates that preserve Project dependencies.
+- Phone file-access modes with verified Storage Helper installation, plus a Terminal wake-lock control for work with the screen off.
 - Background backup and restore with progress notifications and cancellation controls.
 - Session-scoped Preview for HTML/HTM and supported Android XML/Compose UI, with file selection and Start/Pause/Resume/Stop controls.
 - Android App prompt Preview mode: complete and verify changes, then wait for explicit confirmation before building an APK.
@@ -80,15 +81,17 @@ Screenshots supplied by the author. Tap an image to view it at full size. The Pr
 
 Visit [Pokecode Releases](https://github.com/topoftree/PokeCodePublic/releases) for official APKs, release notes, SHA-256 checksums, and accompanying third-party materials.
 
-Download [Pokecode-v0.1.6.8.6.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.8.6/Pokecode-v0.1.6.8.6.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.8.6/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
+Download [Pokecode-v0.1.6.8.16.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.8.16/Pokecode-v0.1.6.8.16.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.8.16/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
 
 ## Latest release
 
-The latest release is [**Pokecode 0.1.6.8.6**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.6.8.6) (Android version code **298**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
+The latest release is [**Pokecode 0.1.6.8.16**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.6.8.16) (Android version code **308**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
 
-This update centers the existing empty-state content in Unclassified/Notes and the empty Note editor. Project Settings keeps the focused Starting version, Components or Carry base input above the keyboard. Preview address taps give light haptic feedback; tapping outside clears text selection while preserving the path, expanded state and selected file.
+Changes since v0.1.6.8.6 include Launcher multi-selection and Unlink, Subblock Cut/Paste with `#number` support, and improved large-Note opening that no longer waits for the Notes collection. Chat exposes queued Codex follow-up choices and text inputs, and Block/group Send opens the matching Project conversation and starts its runtime when needed.
 
-The session Preview controls, prompt-management tools and other features from v0.1.6.8.5 remain available. The third-party dependency and licensing inventory is unchanged from that release; the existing notices and outstanding obligations still apply.
+Settings → Terminal adds controlled phone file access and verified Storage Helper installation. Update now diagnoses Termux package errors and continues after optional plugin failures. Shared model-menu sizing, Settings captions, attachment press feedback and Note viewport behavior are also refined.
+
+The Android runtime uses a compatibility execution path; its access boundaries are described under [Security and APK verification](#security-and-apk-verification). Third-party notice changes and existing obligations are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 The application ID remains `com.pokecode`. Users of v0.1.6.4 can install this signed update over the existing app; older `com.claude.note` installations still need the migration below.
 
@@ -103,6 +106,18 @@ The application ID remains `com.pokecode`. Users of v0.1.6.4 can install this si
 For a fresh environment, open Chat and select **Start initialization**, then follow setup and finish with **Sign in**, **Device code**, or **API key**. Setup requires internet access. AI services may also require an account and internet access even though the development environment runs locally on your phone.
 
 Installation screens vary by manufacturer. If Android refuses the installation, check your Android version and CPU architecture before reporting the error. Do not disable Android's security checks to force an incompatible installation.
+
+## Wake lock: work with the screen off
+
+Pokecode's wake lock helps Terminal commands, builds and Codex tasks keep running while the phone's screen is off. In **Terminal**, a highlighted closed **lock icon** means it is enabled; tap the icon to toggle it. Starting a Terminal session enables it automatically. The screen can still turn off normally.
+
+The wake lock expires after **two hours**; re-enable it if needed, and release it when work finishes to save battery. Android's [battery and background restrictions](https://developer.android.com/training/monitoring-device-state/doze-standby) can still limit processing or network access.
+
+## Phone file access and Storage Helper
+
+Choose **Settings → Terminal → File access**: **App sandbox only**, **Selected phone files**, or **All phone files**. Modes that require Storage Helper offer an Install/Update prompt if a compatible Helper is missing. Pokecode downloads the official compatible release, verifies its checksum, package/version and signing certificate, and opens Android's installer. After installation, it resumes the original permission request; cancellation or failure keeps the previous mode.
+
+Selected files/folders and all-files access still require the normal Android permission choices. The separate [Storage Helper release](https://github.com/topoftree/PokeCodePublic/releases/tag/storage-helper-v1.0.0) remains available independently of the main app.
 
 ## Android requirements
 
@@ -133,13 +148,15 @@ Export important Notes before updating. Avoid uninstalling to work around a sign
 
 ## Security and APK verification
 
-Release 0.1.6.8.6 provides a `SHA256SUMS.txt` entry for the exact APK. In Termux or another shell with `sha256sum`, place the two downloaded files in the same directory and run:
+Release 0.1.6.8.16 provides a `SHA256SUMS.txt` entry for the exact APK. In Termux or another shell with `sha256sum`, place the two downloaded files in the same directory and run:
 
 ```sh
 sha256sum -c SHA256SUMS.txt
 ```
 
 The result should say `OK` for the APK. A matching checksum confirms that the file matches the published bytes. It does not independently establish the publisher's identity; obtain both files from the official release page. Android also verifies the APK's signature during installation.
+
+Managed Codex sessions run through Pokecode's Android/PRoot compatibility path. Commands can access files and network resources available to Pokecode, including its private files; this does not provide Linux workspace-only or read-only confinement. Android app permissions and the selected phone file-access mode remain the outer boundary. Codex approval choices do not expand the Storage Helper's grants.
 
 ## Bug reports
 

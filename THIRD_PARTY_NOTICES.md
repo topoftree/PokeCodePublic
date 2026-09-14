@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.6.8.5**. Original inventory review: **2026-09-09**; release changes reviewed **2026-09-13**.
+Release: **0.1.6.8.16**. Original inventory review: **2026-09-09**; release changes reviewed **2026-09-14**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -8,13 +8,23 @@ Pokecode itself is proprietary. These licenses apply only to their identified th
 
 ## Scope and evidence
 
-The review covers 15 explicit production dependency declarations and 116 resolved external Android artifacts (including those direct dependencies), 63 embedded runtime package records, four additional native libraries bundled inside Python, copied terminal modules, and non-code assets. Test/debug dependencies, the Compose BOM, Gradle, compilers and other build-only tools are not listed as APK components merely because the project uses them.
+The review covers 15 distinct external production dependency declarations and 116 resolved external Android artifacts (including those direct dependencies), 63 embedded runtime package records, four additional native libraries bundled inside Python, copied terminal modules, and non-code assets. Test/debug dependencies, the Compose BOM, Gradle, compilers and other build-only tools are not listed as APK components merely because the project uses them.
 
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
 
-### Changes since v0.1.6.4
+### Changes since v0.1.6.8.6
+
+All 116 resolved external Android runtime artifacts retain the same coordinates and SHA-256 hashes as the previous public release. The new `file-access-ui` module is Pokecode integration code and reuses existing AndroidX dependencies. Packaged Maven version markers, the existing copyleft runtime binaries/packages, third-party source archives, and license text assets are unchanged. No new third-party font, image, model weight, or conflicting copyleft runtime component was identified.
+
+Pokecode modified the existing Apache-2.0 terminal-emulator JNI bridge to close inherited descriptors and apply its Android file-access boundary. The rebuilt `libclaudenote_terminal.so` depends only on Android's system `libc.so`. The new `libpokecode_file_guard.so` is a Pokecode syscall-only executable with no dynamic-library dependencies. The added importer, file-access and Codex interaction helpers are Pokecode integration code; the Storage Helper is a separate APK release.
+
+The native boundary uses Linux userspace API declarations, including [`filter.h`](https://github.com/torvalds/linux/blob/master/include/uapi/linux/filter.h) and [`seccomp.h`](https://github.com/torvalds/linux/blob/master/include/uapi/linux/seccomp.h), marked GPL-2.0 WITH Linux-syscall-note. The [upstream exception](https://github.com/torvalds/linux/blob/master/LICENSES/exceptions/Linux-syscall-note) expressly covers ordinary userspace use of kernel services, allowing non-GPL userspace programs. The [exception text](third_party_licenses/Linux-syscall-note.txt) and existing [GPL-2.0 text](third_party_licenses/GPL-2.0.txt) are retained. This header/API use does not introduce a new GPL program into the APK; it does not resolve the separate, existing runtime obligations below.
+
+New action icons use the already listed Material icon collection. Existing copyright and license texts are retained. The changed JNI module attribution and syscall-exception reference are the notice updates for this release; SDK terms and the other outstanding issues remain unchanged.
+
+### Changes in v0.1.6.8.5 (since v0.1.6.4)
 
 The production dependency declarations and packaged Maven version markers are unchanged. The native shared libraries, bootstrap, embedded package repository, bundled third-party source archives and license text files match the previous public APK byte-for-byte. No new or upgraded copyleft component was identified in the APK delta; existing obligations below remain unresolved.
 
@@ -179,7 +189,7 @@ AndroidX Graphics Path also contains native code and Apache-licensed math header
 
 The terminal emulator and terminal view derive from Termux app **v0.118.3**, commit `5b657c6adf4304e5198951ce815fe0205dcac29c`. The upstream [license statement](https://github.com/termux/termux-app/blob/v0.118.3/LICENSE.md) expressly places these modules under the Apache-2.0 terminal-emulator exception. The whole Termux application is not being represented as Apache-licensed.
 
-Original copyrights remain with the Android Terminal Emulator, Termux and other named contributors. Pokecode changes include Java package/JNI renaming, integration with its workspace, a PTY string-release correction and an echo-state query. Version 0.1.6.4 also adds light-theme rendering and appearance updates that preserve the terminal session, selection, and viewport. Version 0.1.6.8.5 additionally modifies `TerminalBuffer` and `TerminalRow` for incremental revisions and immutable row projections. The original [module license statement](third_party_licenses/runtime/terminal-emulator/LICENSE.md) and [Apache text](third_party_licenses/Apache-2.0.txt) are preserved. Final copied-file attribution comparison remains part of review.
+Original copyrights remain with the Android Terminal Emulator, Termux and other named contributors. Pokecode changes include Java package/JNI renaming, integration with its workspace, a PTY string-release correction and an echo-state query. Version 0.1.6.4 also adds light-theme rendering and appearance updates that preserve the terminal session, selection, and viewport. Version 0.1.6.8.5 additionally modifies `TerminalBuffer` and `TerminalRow` for incremental revisions and immutable row projections. Version 0.1.6.8.16 includes the JNI file-access boundary changes described above. The original [module license statement](third_party_licenses/runtime/terminal-emulator/LICENSE.md) and [Apache text](third_party_licenses/Apache-2.0.txt) are preserved. Final copied-file attribution comparison remains part of review.
 
 ## Embedded native and command-line runtime
 
