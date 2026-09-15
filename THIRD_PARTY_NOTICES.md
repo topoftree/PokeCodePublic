@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.6.9**. Original inventory review: **2026-09-09**; release changes reviewed **2026-09-15**.
+Release: **0.1.6.9.2**. Original inventory review: **2026-09-09**; release changes reviewed **2026-09-15**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -13,6 +13,27 @@ The review covers 15 distinct external production dependency declarations and 11
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes in v0.1.6.9.2 (since v0.1.6.9)
+
+The Android dependency declarations and versions are unchanged. Existing native
+libraries, the bootstrap, embedded package repository, third-party source
+archives and Gradle Wrapper fixture retain their previous bytes. No new or
+upgraded third-party font, icon collection, image asset, model weight or copyleft
+runtime component was identified.
+
+The added `libpokecode_proot_launcher.so` is Pokecode integration code. It is a
+static ARM64 executable using direct system calls, with no linked libraries; it
+starts the existing, unchanged PRoot executable and selects its packaged loader.
+Its Linux userspace API declarations fall under the existing
+[Linux syscall exception](third_party_licenses/Linux-syscall-note.txt).
+It does not incorporate or modify the PRoot or talloc binaries.
+
+Pokecode modified the existing Apache-2.0 terminal-emulator `TerminalSession` to
+share the conversation's session identity and prioritize control input through a
+new input queue. The original module license and Apache-2.0 text are retained.
+Existing source-delivery, copyleft integration and SDK obligations remain open
+as described below.
 
 ### Changes in v0.1.6.9 (since v0.1.6.8.16)
 

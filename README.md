@@ -42,13 +42,13 @@ Send a Block individually, or link several Blocks into a versioned group. Launch
 - Terminal settings for runtime updates, JDK/Gradle Wrapper health checks, dependency repair, optional-plugin update warnings, and global Bun package updates that preserve Project dependencies.
 - Phone file-access modes with verified Storage Helper installation, plus a Terminal wake-lock control for work with the screen off.
 - Background backup and restore with progress notifications and cancellation controls.
-- Session-scoped Preview with grouped HTML, Android Layout and Compose entries, compiled Android resources/code, and Start/Pause/Resume/Stop controls.
+- Session-scoped Preview with grouped HTML, Android Layout and Compose entries, compiled Android resources/code, Start/Pause/Resume/Stop controls, and error Details with Retry.
 - Android App prompt Preview mode: conversation-specific controls let Codex complete and verify changes, then wait for explicit confirmation before building an APK.
 - Light and dark themes and session progress notifications with accumulated working time and static UFO artwork.
 
 External services, accounts, downloaded tools, and model availability can affect individual workflows. Ubuntu and external AI services require separate setup; they are not provided by this repository.
 
-Compiled Android previews require the Project's Gradle/JDK/Android SDK setup. They prepare resources and code in the selected Terminal's Ubuntu environment without generating an application APK. Unsupported or failed preparation reports an error.
+Compiled Android previews require the Project's Gradle/JDK/Android SDK setup. They prepare resources and code through the selected Terminal's Ubuntu login and toolchain profiles without generating an application APK. Nested Android projects can use their own build settings with an ancestor Gradle Wrapper. Unsupported or failed preparation reports an error with selectable Details and Retry.
 
 ## Screenshots
 
@@ -81,15 +81,15 @@ Screenshots supplied by the author. Tap an image to view it at full size.
 
 Visit [Pokecode Releases](https://github.com/topoftree/PokeCodePublic/releases) for official APKs, release notes, SHA-256 checksums, and accompanying third-party materials.
 
-Download [Pokecode-v0.1.6.9.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.9/Pokecode-v0.1.6.9.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.9/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
+Download [Pokecode-v0.1.6.9.2.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.9.2/Pokecode-v0.1.6.9.2.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.9.2/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
 
 ## Latest release
 
-The latest release is [**Pokecode 0.1.6.9**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.6.9) (Android version code **314**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
+The latest release is [**Pokecode 0.1.6.9.2**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.6.9.2) (Android version code **316**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
 
-Changes since v0.1.6.8.16 include compiled Android Layout and Compose previews in the selected Terminal's Ubuntu environment, with entry discovery across modules and source sets. Chat keeps Preview-mode settings in the owning conversation and applies mode changes without adding user messages. Block and Launcher sends use a persistent queue with cancellation and **Send now**; normal task completion releases automatic sends, while interruption keeps them pending.
+Changes since v0.1.6.9 improve Chat Stop controls across navigation and Terminal reattachment. Stop takes priority over queued prompts and configuration reads, while interruption preserves the notification state and five-second cooldown. Model, reasoning, speed and permission settings refresh within their owning session, with retries for incomplete configuration reads.
 
-Live Notifications use static UFO artwork and accumulated working time that pauses on interruption. Chat interruption controls, shared model menus, intentional Terminal shutdown and Android Back handling during conversation search are refined. Initialization and Terminal Update check JDK/Gradle Wrapper health while preserving project versions. Removing a Block's leading `//` preserves its text through autosave and Undo/Redo, and the Terminal wake lock has no app-imposed time limit.
+Android Layout and Compose previews share Terminal's runtime launcher and Ubuntu login profiles. Nested projects select their own build settings even when reusing an ancestor Gradle Wrapper. Preview distinguishes runtime, Java, Gradle and preparation failures, with selectable, credential-redacted **Details** and **Retry**. Installed-app rendering and live control interactions remain manual validation items.
 
 The Android runtime uses a compatibility execution path; its access boundaries are described under [Security and APK verification](#security-and-apk-verification). Third-party notice changes and existing obligations are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
@@ -148,7 +148,7 @@ Export important Notes before updating. Avoid uninstalling to work around a sign
 
 ## Security and APK verification
 
-Release 0.1.6.8.16 provides a `SHA256SUMS.txt` entry for the exact APK. In Termux or another shell with `sha256sum`, place the two downloaded files in the same directory and run:
+The release provides a `SHA256SUMS.txt` entry for the exact APK. In Termux or another shell with `sha256sum`, place the two downloaded files in the same directory and run:
 
 ```sh
 sha256sum -c SHA256SUMS.txt
