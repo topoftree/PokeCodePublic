@@ -32,27 +32,27 @@ Send a Block individually, or link several Blocks into a versioned group. Launch
 
 - Notes with editable Blocks and Subblocks, Cut/Paste, pinning, search, and progressive loading for large Notes.
 - Project workspaces, Categories with selectable icons, and reusable templates with shared names.
-- Launcher for preparing linked content and selecting multiple Blocks to unlink from a group while keeping the original Note content.
+- Launcher for preparing linked content, persistent pending sends with cancellation and Send now, and selecting multiple Blocks to unlink while keeping the original Note content.
 - Time Capsule for browsing saved submission snapshots by date.
 - Trash with restoration of deleted Notes and Blocks.
 - Export Notes as Word documents (`.docx`), UTF-8 text, or PDF.
 - Chat sessions with attachments, a pen/eraser sketch editor, streamed responses, task controls, and interactive Codex follow-up questions.
 - AI-assisted vibecoding with Codex in a local development environment on your Android phone.
 - An embedded terminal with light and dark palettes, resumable initialization, and Codex/GitHub sign-in.
-- Terminal settings for runtime updates, dependency repair, optional-plugin update warnings, and global Bun package updates that preserve Project dependencies.
+- Terminal settings for runtime updates, JDK/Gradle Wrapper health checks, dependency repair, optional-plugin update warnings, and global Bun package updates that preserve Project dependencies.
 - Phone file-access modes with verified Storage Helper installation, plus a Terminal wake-lock control for work with the screen off.
 - Background backup and restore with progress notifications and cancellation controls.
-- Session-scoped Preview for HTML/HTM and supported Android XML/Compose UI, with file selection and Start/Pause/Resume/Stop controls.
-- Android App prompt Preview mode: complete and verify changes, then wait for explicit confirmation before building an APK.
-- Light and dark themes and session progress notifications.
+- Session-scoped Preview with grouped HTML, Android Layout and Compose entries, compiled Android resources/code, and Start/Pause/Resume/Stop controls.
+- Android App prompt Preview mode: conversation-specific controls let Codex complete and verify changes, then wait for explicit confirmation before building an APK.
+- Light and dark themes and session progress notifications with accumulated working time and static UFO artwork.
 
 External services, accounts, downloaded tools, and model availability can affect individual workflows. Ubuntu and external AI services require separate setup; they are not provided by this repository.
 
-Compiled Android previews require the Project's Gradle/JDK/Android SDK setup; XML also offers a limited draft renderer.
+Compiled Android previews require the Project's Gradle/JDK/Android SDK setup. They prepare resources and code in the selected Terminal's Ubuntu environment without generating an application APK. Unsupported or failed preparation reports an error.
 
 ## Screenshots
 
-Screenshots supplied by the author. Tap an image to view it at full size. The Preview screenshot shows an earlier interface; the current release uses the file picker and Start/Pause/Resume/Stop controls described above.
+Screenshots supplied by the author. Tap an image to view it at full size.
 
 <table>
   <tr>
@@ -64,7 +64,7 @@ Screenshots supplied by the author. Tap an image to view it at full size. The Pr
     <td align="center"><strong>4. Blocks and Subblocks</strong><br><a href="screenshots/04-note-blocks.png"><img src="screenshots/04-note-blocks.png" width="260" alt="Pokecode Note editor with a Block and three Subblocks"></a></td>
   </tr>
   <tr>
-    <td align="center"><strong>5. Preview (earlier interface)</strong><br><a href="screenshots/05-preview-earlier-ui.png"><img src="screenshots/05-preview-earlier-ui.png" width="260" alt="Pokecode Preview page in an earlier interface"></a></td>
+    <td align="center"><strong>5. Preview</strong><br><a href="screenshots/05-preview.png"><img src="screenshots/05-preview.png" width="260" alt="Pokecode Preview page with file selection and Start/Stop controls"></a></td>
     <td align="center"><strong>6. Notes</strong><br><a href="screenshots/06-notes.png"><img src="screenshots/06-notes.png" width="260" alt="Pokecode Notes page with note cards and content previews"></a></td>
   </tr>
   <tr>
@@ -81,15 +81,15 @@ Screenshots supplied by the author. Tap an image to view it at full size. The Pr
 
 Visit [Pokecode Releases](https://github.com/topoftree/PokeCodePublic/releases) for official APKs, release notes, SHA-256 checksums, and accompanying third-party materials.
 
-Download [Pokecode-v0.1.6.8.16.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.8.16/Pokecode-v0.1.6.8.16.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.8.16/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
+Download [Pokecode-v0.1.6.9.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.9/Pokecode-v0.1.6.9.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.9/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
 
 ## Latest release
 
-The latest release is [**Pokecode 0.1.6.8.16**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.6.8.16) (Android version code **308**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
+The latest release is [**Pokecode 0.1.6.9**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.6.9) (Android version code **314**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
 
-Changes since v0.1.6.8.6 include Launcher multi-selection and Unlink, Subblock Cut/Paste with `#number` support, and improved large-Note opening that no longer waits for the Notes collection. Chat exposes queued Codex follow-up choices and text inputs, and Block/group Send opens the matching Project conversation and starts its runtime when needed.
+Changes since v0.1.6.8.16 include compiled Android Layout and Compose previews in the selected Terminal's Ubuntu environment, with entry discovery across modules and source sets. Chat keeps Preview-mode settings in the owning conversation and applies mode changes without adding user messages. Block and Launcher sends use a persistent queue with cancellation and **Send now**; normal task completion releases automatic sends, while interruption keeps them pending.
 
-Settings → Terminal adds controlled phone file access and verified Storage Helper installation. Update now diagnoses Termux package errors and continues after optional plugin failures. Shared model-menu sizing, Settings captions, attachment press feedback and Note viewport behavior are also refined.
+Live Notifications use static UFO artwork and accumulated working time that pauses on interruption. Chat interruption controls, shared model menus, intentional Terminal shutdown and Android Back handling during conversation search are refined. Initialization and Terminal Update check JDK/Gradle Wrapper health while preserving project versions. Removing a Block's leading `//` preserves its text through autosave and Undo/Redo, and the Terminal wake lock has no app-imposed time limit.
 
 The Android runtime uses a compatibility execution path; its access boundaries are described under [Security and APK verification](#security-and-apk-verification). Third-party notice changes and existing obligations are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
@@ -111,7 +111,7 @@ Installation screens vary by manufacturer. If Android refuses the installation, 
 
 Pokecode's wake lock helps Terminal commands, builds and Codex tasks keep running while the phone's screen is off. In **Terminal**, a highlighted closed **lock icon** means it is enabled; tap the icon to toggle it. Starting a Terminal session enables it automatically. The screen can still turn off normally.
 
-The wake lock expires after **two hours**; re-enable it if needed, and release it when work finishes to save battery. Android's [battery and background restrictions](https://developer.android.com/training/monitoring-device-state/doze-standby) can still limit processing or network access.
+The wake lock has **no app-imposed time limit**. It remains held until you disable it, shut down Terminal, or its owning service stops. Release it when work finishes to save battery. Android's [battery and background restrictions](https://developer.android.com/training/monitoring-device-state/doze-standby) can still limit processing or network access.
 
 ## Phone file access and Storage Helper
 

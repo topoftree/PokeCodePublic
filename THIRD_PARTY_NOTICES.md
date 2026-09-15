@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.6.8.16**. Original inventory review: **2026-09-09**; release changes reviewed **2026-09-14**.
+Release: **0.1.6.9**. Original inventory review: **2026-09-09**; release changes reviewed **2026-09-15**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -8,13 +8,39 @@ Pokecode itself is proprietary. These licenses apply only to their identified th
 
 ## Scope and evidence
 
-The review covers 15 distinct external production dependency declarations and 116 resolved external Android artifacts (including those direct dependencies), 63 embedded runtime package records, four additional native libraries bundled inside Python, copied terminal modules, and non-code assets. Test/debug dependencies, the Compose BOM, Gradle, compilers and other build-only tools are not listed as APK components merely because the project uses them.
+The review covers 15 distinct external production dependency declarations and 116 resolved external Android artifacts (including those direct dependencies), 63 embedded runtime package records, four additional native libraries bundled inside Python, copied terminal modules, and non-code assets. Test/debug dependencies, the Compose BOM, the complete Gradle distribution, compilers and other build-only tools are not listed as APK components merely because the project uses them. The newly bundled Gradle Wrapper fixture is covered below.
 
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
 
-### Changes since v0.1.6.8.6
+### Changes in v0.1.6.9 (since v0.1.6.8.16)
+
+This release adds a Gradle Wrapper diagnostic fixture to the APK: the wrapper
+JAR, generated POSIX launcher and wrapper properties target Gradle 9.6.1. The JAR
+and launcher use [Apache-2.0](https://github.com/gradle/gradle/blob/v9.6.1/LICENSE).
+Their [license and attribution](third_party_licenses/gradle-wrapper-9.6.1/) are
+preserved here; the APK's wrapper JAR also contains `META-INF/LICENSE` and the
+launcher retains its original copyright header. This bundled wrapper is an
+exception to the build-only tooling excluded from the original inventory above.
+The complete Gradle distribution is downloaded separately when needed.
+
+Initialization and Terminal Update check and can repair the separately installed
+JDK used to build Android projects. OpenJDK 17 uses [GPLv2 with the Classpath Exception](https://github.com/openjdk/jdk17u/blob/master/LICENSE).
+It is a build tool downloaded separately into Ubuntu and is not distributed
+inside the Pokecode APK. This setup change adds no bundled GPL dependency.
+Existing source-delivery, copyleft integration and Google SDK obligations remain
+as documented below.
+
+The production Android dependency declarations are unchanged, and all 116 cached
+external Android artifacts match the existing publisher-verified inventory. The
+release APK's native libraries, bootstrap, embedded package repository,
+third-party source archives and Maven version markers match v0.1.6.8.16 byte for
+byte. No new font, icon collection, image asset, model weight or bundled copyleft
+runtime component was identified. Static notification artwork reuses the existing
+owner-supplied UFO asset; the updated README screenshot is supplied by the owner.
+
+### Changes in v0.1.6.8.16 (since v0.1.6.8.6)
 
 All 116 resolved external Android runtime artifacts retain the same coordinates and SHA-256 hashes as the previous public release. The new `file-access-ui` module is Pokecode integration code and reuses existing AndroidX dependencies. Packaged Maven version markers, the existing copyleft runtime binaries/packages, third-party source archives, and license text assets are unchanged. No new third-party font, image, model weight, or conflicting copyleft runtime component was identified.
 

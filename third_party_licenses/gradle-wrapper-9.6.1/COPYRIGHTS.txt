@@ -1,0 +1,16 @@
+Gradle Wrapper diagnostic fixture for Gradle 9.6.1
+
+Generated POSIX launcher attribution, retained from the supplied gradlew:
+Copyright © 2015 the original authors.
+SPDX-License-Identifier: Apache-2.0
+
+The Gradle Wrapper JAR declares Apache-2.0 in META-INF/MANIFEST.MF and
+contains the license reproduced here as LICENSE. The generated launcher
+retains its original copyright and Apache license header in the APK.
+
+Upstream: https://github.com/gradle/gradle/tree/v9.6.1
+License: https://github.com/gradle/gradle/blob/v9.6.1/LICENSE
+
+This notice covers the wrapper JAR and generated launcher. The complete
+Gradle distribution and a JDK are downloaded separately when needed; their
+components retain their own licenses and notices.
