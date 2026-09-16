@@ -2,14 +2,6 @@
 
 
 
-🤜[Support PokeCode on GoFundMe](https://gofund.me/9000cc699)
-
-PokeCode is an independent project that I’m actively developing and maintaining. If you find the project useful, believe in what I’m building, or simply want to support its continued development, you can help by contributing to my GoFundMe.
-
-Your support will help cover development costs, testing devices, better development hardware, and the time needed to keep improving PokeCode—including better support for foldable devices, AI-assisted development workflows, and new features.
-
-Any amount of support is greatly appreciated and helps me spend more time making PokeCode better.
-
 
 
 # Pokecode
