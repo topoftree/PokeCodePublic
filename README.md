@@ -25,13 +25,14 @@ Send a Block individually, or link several Blocks into a versioned group. Launch
 - Notes with editable Blocks and Subblocks, Cut/Paste, pinning, search, and progressive loading for large Notes.
 - Project workspaces, Categories with selectable icons, and reusable templates with shared names.
 - Launcher for preparing linked content, persistent pending sends with cancellation and Send now, and selecting multiple Blocks to unlink while keeping the original Note content.
-- Time Capsule for browsing saved submission snapshots by date.
+- Time Capsule for browsing saved submission snapshots by date, resending individual or grouped submissions, and keeping generated APK/HTML outputs from versioned sends.
 - Trash with restoration of deleted Notes and Blocks.
 - Export Notes as Word documents (`.docx`), UTF-8 text, or PDF.
 - Chat sessions with attachments, a pen/eraser sketch editor, streamed responses, task controls, and interactive Codex follow-up questions.
 - AI-assisted vibecoding with Codex in a local development environment on your Android phone.
 - An embedded terminal with light and dark palettes, resumable initialization, and Codex/GitHub sign-in.
-- Terminal settings for runtime updates, JDK/Gradle Wrapper health checks, dependency repair, optional-plugin update warnings, and global Bun package updates that preserve Project dependencies.
+- Terminal settings for runtime updates, shared Android SDK setup, JDK/Gradle Wrapper health checks, dependency repair, optional-plugin update warnings, and global Bun package updates that preserve Project dependencies.
+- Game project mode with optional Godot installation, matching Android export templates, and shared setup state across Initialization and Project settings.
 - Phone file-access modes with verified Storage Helper installation, plus a Terminal wake-lock control for work with the screen off.
 - Background backup and restore with progress notifications and cancellation controls.
 - Session-scoped Preview with grouped HTML, Android Layout and Compose entries, compiled Android resources/code, Start/Pause/Resume/Stop controls, and error Details with Retry.
@@ -41,6 +42,8 @@ Send a Block individually, or link several Blocks into a versioned group. Launch
 External services, accounts, downloaded tools, and model availability can affect individual workflows. Ubuntu and external AI services require separate setup; they are not provided by this repository.
 
 Compiled Android previews require the Project's Gradle/JDK/Android SDK setup. They prepare resources and code through the selected Terminal's Ubuntu login and toolchain profiles without generating an application APK. Nested Android projects can use their own build settings with an ancestor Gradle Wrapper. Unsupported or failed preparation reports an error with selectable Details and Retry.
+
+Android Preview shares SDK setup with Initialization and Terminal Update. Preparation validates the selected module, source set, resources and Compose entry, reports its current stage, and cleans up cancelled or failed work before Retry.
 
 ## Screenshots
 
@@ -73,15 +76,17 @@ Screenshots supplied by the author. Tap an image to view it at full size.
 
 Visit [Pokecode Releases](https://github.com/topoftree/PokeCodePublic/releases) for official APKs, release notes, SHA-256 checksums, and accompanying third-party materials.
 
-Download [Pokecode-v0.1.6.9.2.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.9.2/Pokecode-v0.1.6.9.2.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.9.2/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
+Download [Pokecode-v0.1.6.9.9.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.9.9/Pokecode-v0.1.6.9.9.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.6.9.9/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
 
 ## Latest release
 
-The latest release is [**Pokecode 0.1.6.9.2**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.6.9.2) (Android version code **316**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
+The latest release is [**Pokecode 0.1.6.9.9**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.6.9.9) (Android version code **323**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
 
-Changes since v0.1.6.9 improve Chat Stop controls across navigation and Terminal reattachment. Stop takes priority over queued prompts and configuration reads, while interruption preserves the notification state and five-second cooldown. Model, reasoning, speed and permission settings refresh within their owning session, with retries for incomplete configuration reads.
+Changes since v0.1.6.9.2 add optional Godot Game tooling and shared Android SDK setup. XML/Compose Preview improves compiled-entry validation, rendering, stage diagnostics and process cleanup. Game installation can continue in the background and completes the pending project-mode selection after verification.
 
-Android Layout and Compose previews share Terminal's runtime launcher and Ubuntu login profiles. Nested projects select their own build settings even when reusing an ancestor Gradle Wrapper. Preview distinguishes runtime, Java, Gradle and preparation failures, with selectable, credential-redacted **Details** and **Retry**. Installed-app rendering and live control interactions remain manual validation items.
+Time Capsule's submission-header menu now offers **Resend** for single Blocks and whole groups, using current Project settings and a new version without changing the original snapshots. Versioned sends capture changed APK/HTML outputs as independent historical attachments. Normal Chat sends preserve the user's text and attachments; Project instructions remain in Block/Launcher sends and explicit Preview controls.
+
+Codex task resume and touch choices are improved, and closing Codex clears its Live Notification independently of Terminal or Ubuntu. Block sends check Initialization first, Terminal Update checks active Codex processes, and note conversion and Project prompt scrolling are improved. Installed-app rendering and live control interactions remain manual validation items.
 
 The Android runtime uses a compatibility execution path; its access boundaries are described under [Security and APK verification](#security-and-apk-verification). Third-party notice changes and existing obligations are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
@@ -96,6 +101,8 @@ The application ID remains `com.pokecode`. Users of v0.1.6.4 can install this si
 5. Install and open Pokecode. You can turn off that installation permission afterward.
 
 For a fresh environment, open Chat and select **Start initialization**, then follow setup and finish with **Sign in**, **Device code**, or **API key**. Setup requires internet access. AI services may also require an account and internet access even though the development environment runs locally on your phone.
+
+Select the optional **Game mode** checkbox during Initialization to install Godot and Android export tooling, or choose **Game** later in New Project or Project Settings to use the shared installer.
 
 Installation screens vary by manufacturer. If Android refuses the installation, check your Android version and CPU architecture before reporting the error. Do not disable Android's security checks to force an incompatible installation.
 
@@ -175,6 +182,8 @@ A public GitHub repository does not make Pokecode open source. No MIT, Apache, G
 Pokecode uses third-party software under several licenses, including components that require source distribution. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and [third_party_licenses/](third_party_licenses/) for component-specific notices and license texts.
 
 The terminal runtime includes GPL, LGPL, and other copyleft components. The source-delivery and redistribution review remains incomplete: a complete corresponding-source package has not been published with this release, and LGPL replacement, execution-time notices, and SDK obligations remain unresolved. Publication does not establish compliance or remove those obligations. Required third-party source materials are distinct from Pokecode's private application source.
+
+Version 0.1.6.9.9 also bundles ReVanced AAPT2 v1.1.0. Its upstream repository carries GPL-3.0, while the exact binary/patch license scope remains unresolved. See the [release-specific notice](THIRD_PARTY_NOTICES.md#changes-in-v01699-since-v01692), which supplements the APK's Apache-only AAPT2 description.
 
 Google SDKs are covered by their own terms, rather than being presumed open source. ML Kit may send API performance and usage metrics to Google; see the [SDK notice](SDK_NOTICE.md). This notice describes those SDKs and is not a complete application privacy policy.
 

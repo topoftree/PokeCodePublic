@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.6.9.2**. Original inventory review: **2026-09-09**; release changes reviewed **2026-09-15**.
+Release: **0.1.6.9.9**. Original inventory review: **2026-09-09**; release changes reviewed **2026-09-20**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -8,11 +8,45 @@ Pokecode itself is proprietary. These licenses apply only to their identified th
 
 ## Scope and evidence
 
-The review covers 15 distinct external production dependency declarations and 116 resolved external Android artifacts (including those direct dependencies), 63 embedded runtime package records, four additional native libraries bundled inside Python, copied terminal modules, and non-code assets. Test/debug dependencies, the Compose BOM, the complete Gradle distribution, compilers and other build-only tools are not listed as APK components merely because the project uses them. The newly bundled Gradle Wrapper fixture is covered below.
+The original review covers 15 distinct external production dependency declarations and 116 resolved external Android artifacts (including those direct dependencies), 63 embedded runtime package records, four additional native libraries bundled inside Python, copied terminal modules, and non-code assets. Test/debug dependencies, the Compose BOM, the complete Gradle distribution, compilers and other build-only tools are not listed as APK components merely because the project uses them. The bundled Gradle Wrapper fixture and the runtime AAPT2 compiler added in v0.1.6.9.9 are covered separately below.
 
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes in v0.1.6.9.9 (since v0.1.6.9.2)
+
+The Android dependency declarations and packaged Maven version markers are
+unchanged. Existing native libraries, the bootstrap, embedded package repository,
+third-party source archives, license text assets and Gradle Wrapper fixture retain
+their previous bytes. No new third-party font, icon collection or image asset
+was introduced; new UI icons use the existing Material icon dependency.
+
+This release newly bundles `assets/runtime/aapt2-arm64`, byte-identical to the
+4,693,752-byte `aapt2-arm64-v8a` asset from
+[ReVanced AAPT2 v1.1.0](https://github.com/ReVanced/aapt2/releases/tag/v1.1.0).
+SHA-256: `7e5ae2e1f62fc24cab14072555ffd0a1a7e1ce27e82cc1008967b835b6d8df5b`.
+It is distributed for runtime Android resource compilation, rather than used only
+to build Pokecode.
+
+**AAPT2 license scope remains unresolved.** The tagged ReVanced repository carries
+[GPL-3.0](https://github.com/ReVanced/aapt2/blob/v1.1.0/LICENSE), whose exact text is
+already preserved in [GPL-3.0.txt](third_party_licenses/GPL-3.0.txt). Its build
+[applies source patches](https://github.com/ReVanced/aapt2/blob/v1.1.0/patch.sh) and
+[links statically](https://github.com/ReVanced/aapt2/blob/v1.1.0/CMakeLists.txt).
+AOSP portions retain their Apache-2.0 notices, but the repository-level license
+alone does not establish the full binary/patch license scope or complete
+attribution for linked components. Those mappings and any corresponding-source
+obligations remain under review. The APK's bundled notice describes AAPT2 only as
+Apache-2.0; this accompanying notice records the unresolved scope and must be read
+with it. Publication does not establish proprietary-distribution clearance or
+license Pokecode's unrelated application source.
+
+The new SDK/Godot setup helpers are Pokecode integration code. Godot and its
+matching Android export templates, Google Android SDK packages, and JDK packages
+are downloaded separately when requested; the engine, templates and SDK are not
+embedded in this APK. Their own terms continue to apply. Existing runtime
+source-delivery, copyleft integration and Google SDK obligations remain open.
 
 ### Changes in v0.1.6.9.2 (since v0.1.6.9)
 
