@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.6.9.9**. Original inventory review: **2026-09-09**; release changes reviewed **2026-09-20**.
+Release: **0.1.7.1**. Original inventory review: **2026-09-09**; release changes reviewed **2026-09-21**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -13,6 +13,31 @@ The original review covers 15 distinct external production dependency declaratio
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes in v0.1.7.1 (since v0.1.6.9.9)
+
+The production dependency declarations and resolved Android artifacts retain
+their previous versions and bytes. The existing native libraries, bootstrap,
+embedded package repository, AAPT2 binary, Gradle Wrapper fixture, third-party
+source archives and license text assets are unchanged. No new third-party font,
+icon collection, image asset or model weight was introduced.
+
+Pokecode modified the existing Termux `terminal-view` module's `TerminalView`
+to preserve scroll anchors while deferring hidden-view repaint, scrollbar
+animation and accessibility text refresh. This module is covered by the
+[upstream Apache-2.0 exception](https://github.com/termux/termux-app/blob/v0.118.3/LICENSE.md).
+A dated modification notice identifies the changes in the modified file; the
+existing license and attribution materials remain in place. No license text
+files needed replacement.
+
+The new Web Preview helpers are Pokecode integration code. Project development
+servers and dependencies used or downloaded by Preview are not bundled as new
+APK components and retain their own terms.
+
+No newly introduced or upgraded GPL, AGPL, LGPL or other conflicting component
+was identified in this release delta. The unchanged ReVanced AAPT2 license-scope,
+runtime source-delivery/integration and Google SDK obligations documented below
+remain unresolved. This delta review does not establish overall licensing clearance.
 
 ### Changes in v0.1.6.9.9 (since v0.1.6.9.2)
 
