@@ -25,17 +25,17 @@ Send a Block individually, or link several Blocks into a versioned group. Blocks
 - Notes with editable Blocks and Subblocks, Cut/Paste, pinning, search, and progressive loading for large Notes.
 - Project workspaces, Categories with selectable icons, and reusable templates with shared names.
 - Launcher for preparing linked content, persistent pending sends with cancellation and Send now, and selecting multiple Blocks to unlink while keeping the original Note content.
-- Time Capsule for browsing saved submission snapshots by date, resending individual or grouped submissions, and keeping generated APK/HTML outputs from versioned sends.
+- Time Capsule for browsing saved submission snapshots by date, resending individual or grouped submissions, keeping generated APK/HTML outputs, and reviewing persisted Codex usage statistics.
 - Trash with restoration of deleted Notes and Blocks.
 - Export Notes as Word documents (`.docx`), UTF-8 text, or PDF.
-- Chat sessions with attachments, a pen/eraser sketch editor, streamed responses, task controls, and interactive Codex follow-up questions.
+- Chat sessions with attachments, a pen/eraser sketch editor, streamed responses, task controls, interactive Codex follow-up questions, and queued-message actions.
 - AI-assisted vibecoding with Codex in a local development environment on your Android phone.
 - An embedded terminal with light and dark palettes, resumable initialization, and Codex/GitHub sign-in.
 - Terminal settings for runtime updates, shared Android SDK setup, JDK/Gradle Wrapper health checks, dependency repair, optional-plugin update warnings, and global Bun package updates that preserve Project dependencies.
 - Game project mode with optional Godot installation, matching Android export templates, and shared setup state across Initialization and Project settings.
 - Phone file-access modes with verified Storage Helper installation, plus a Terminal wake-lock control for work with the screen off.
 - Background backup and restore with progress notifications and cancellation controls.
-- Session-scoped Preview with HTML, framework Web apps, Android Layout and Compose entries, Start/Pause/Resume/Refresh/Stop controls, and error Details with Retry.
+- Session-scoped Preview with HTML, framework Web apps, Android Layout, Compose, Kotlin View and Java View entries, retained rendering across navigation, and error Details with Retry.
 - Android App prompt Preview mode: version-linked Block/Launcher sends can ask Codex to complete and verify changes, then wait for explicit confirmation before building an APK.
 - Light and dark themes and Live Notifications with project identity, the active Codex plan step, current runtime activity, a whole-run elapsed timer and Stop.
 
@@ -45,7 +45,11 @@ Compiled Android previews require the Project's Gradle/JDK/Android SDK setup. Th
 
 Android Preview shares SDK setup with Initialization and Terminal Update. Preparation validates the selected module, source set, resources and Compose entry, reports its current stage, and cleans up cancelled or failed work before Retry.
 
-Framework Web previews use the Project's development server, including routing and supported hot reload. XML/Compose previews rebuild after source/resource edits and use separate renderer processes to contain crashes; those processes retain the app's permissions. Leaving Preview stops its builds, servers and renderers.
+Framework Web previews use the Project's development server, including routing and supported hot reload. Supported native previews rebuild after source/resource edits and use separate renderer processes to contain crashes; those processes retain the app's permissions. Rendered content fills the Preview area above bottom navigation and adapts to the viewport. Leaving Preview detaches its visible surface while the service retains the job, progress and result; returning reconnects to the same job. Stop cancels the owned work and releases its resources. Background processing remains subject to Android's battery and background restrictions.
+
+Scroll below the Time Capsule calendar to see Codex usage statistics. The daily, weekly and monthly views show total, input, output and cached tokens, cache hit rate, and estimated USD cost. Swipe through periods and long-press a rounded chart bar for details. Usage refreshes silently when the app opens and Codex tasks finish. Cost estimates use recorded model usage and known rates; unavailable prices remain unavailable, and estimates are not subscription charges.
+
+While Codex is running, queued Chat messages have a three-dot menu on the left of the bubble. **Send immediately** uses Codex's immediate-delivery action. **Cancel** interrupts the task, returns that message and its attachments to Chat input, then resumes the task with a hidden `continue` while preserving the other queued messages.
 
 ## Screenshots
 
@@ -78,19 +82,19 @@ Screenshots supplied by the author. Tap an image to view it at full size. Some s
 
 Visit [Pokecode Releases](https://github.com/topoftree/PokeCodePublic/releases) for official APKs, release notes, SHA-256 checksums, and accompanying third-party materials.
 
-Download [Pokecode-v0.1.7.1.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.7.1/Pokecode-v0.1.7.1.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.7.1/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
+Download [Pokecode-v0.1.7.5.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.7.5/Pokecode-v0.1.7.5.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.7.5/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
 
 ## Latest release
 
-The latest release is [**Pokecode 0.1.7.1**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.7.1) (Android version code **330**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
+The latest release is [**Pokecode 0.1.7.5**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.7.5) (Android version code **338**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
 
-Changes since v0.1.6.9.9 add framework Web previews, incremental Android preview refresh and separate Android renderer processes. Preview also improves resource rendering, diagnostics, cancellation and retry cleanup.
+Changes since v0.1.7.1 add persisted Codex token statistics below the Time Capsule calendar, daily/weekly/monthly charts, period details, model-based cost estimates and silent background refreshes.
 
-Chat improves send/startup recovery, accepted-message status, network reconnection and scroll restoration after Status. Launcher and Blocks share a visible send indicator; unversioned Blocks omit automatic instructions. Keyboard animations avoid repeated resizing and repainting of the hidden Terminal.
+Preview adds interactive Compose, Kotlin View and Java View source entries, reuses unchanged compiled results, and detects unresponsive native renderers. Rendered content uses the available screen area; service-owned jobs and results survive page changes and Activity recreation, with explicit Stop and error cleanup.
 
-Live Notifications show `project • project name` above the current process. A valid structured `in_progress` plan step takes priority over newer user prompts, with the runtime subprocess beneath it. Activity and plan changes do not restart the whole-run timer. Installed-app animation smoothness, rendering and live control interactions remain manual validation items.
+Chat adds the queued-message menu with Send immediately and Cancel/draft recovery. Codex session events, model settings, Account state and Status analytics synchronize more reliably; multilingual queued prompts retain their delivery identities. Attachment renaming and Note recovery also improve. Installed-app animation smoothness, rendering, background/lock-screen behavior and live control interactions remain manual validation items.
 
-The Android runtime uses a compatibility execution path; its access boundaries are described under [Security and APK verification](#security-and-apk-verification). Third-party notice changes and existing obligations are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+The Android runtime uses a compatibility execution path; its access boundaries are described under [Security and APK verification](#security-and-apk-verification). Bundled third-party versions and license materials remain unchanged from v0.1.7.1; existing obligations are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 The application ID remains `com.pokecode`. Users of v0.1.6.4 can install this signed update over the existing app; older `com.claude.note` installations still need the migration below.
 
