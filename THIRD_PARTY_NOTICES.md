@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.7.1**. Original inventory review: **2026-09-09**; release changes reviewed **2026-09-21**.
+Release: **0.1.7.6.7**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-01**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -13,6 +13,31 @@ The original review covers 15 distinct external production dependency declaratio
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes in v0.1.7.6.7 (since public v0.1.7.5)
+
+Production dependency declarations retain their versions. Comparison with the
+actual public v0.1.7.5 APK confirms unchanged packaged dependency version markers,
+native libraries, bootstrap, embedded package repository, AAPT2 binary, third-party
+source archives and license text assets. No new third-party font, image collection,
+model weight or native library was introduced.
+
+The Block session button adds a standalone vector adapted from Google's
+[Material Design Icons `forum` (outlined)](https://github.com/google/material-design-icons/blob/master/src/communication/forum/materialiconsoutlined/24px.svg),
+under Apache-2.0. The existing [Apache-2.0 text](third_party_licenses/Apache-2.0.txt)
+and Material component notices are retained; the resource attribution below now
+identifies this vector. No license text files needed replacement.
+
+The new Cloud CLI/patch-merge helpers and changes to the Codex runtime bridge are
+Pokecode integration code. They use the existing runtime and invoke the official
+Codex CLI; they do not bundle a new third-party Cloud SDK. R8 service-provider
+names, build metadata and baseline profiles change with the application build.
+
+No newly introduced or changed GPL, AGPL, LGPL or other potentially conflicting
+third-party dependency was identified in this delta. Existing Termux/runtime
+source-delivery and integration issues, ReVanced AAPT2 license scope and Google
+SDK obligations remain unresolved. This delta review does not establish overall
+licensing clearance.
 
 ### Changes in v0.1.7.1 (since v0.1.6.9.9)
 
@@ -379,7 +404,7 @@ These are package records, not an additive count of entirely independent upstrea
 | --- | --- | --- |
 | Pokecode icon1/icon2 and derived system/adaptive/monochrome icons | Owner confirmed original icon artwork was ChatGPT-generated on 2026-09-09; system variants derive from that artwork | Owner-provided artwork; not assigned a third-party open-source license. This records supplied provenance, not a trademark or third-party-right warranty. |
 | Twelve UFO animation frames | Owner-supplied numbered sequence imported for v0.1.6.5.3, with cropping, transparency and scaling | Replaces the earlier six-frame artwork. No third-party open-source license is assigned; the older six-image ChatGPT confirmation is not treated as independent verification of this replacement sequence. |
-| Compose Material icons | 1.7.8 release artifacts | Apache-2.0; original component notices retained above. |
+| Compose Material icons and standalone session vector | 1.7.8 release artifacts; Google Material Design Icons `forum` (outlined), adapted for the Block session button | Apache-2.0; original component notices and full license text retained above. |
 | Mozilla/curl certificate store | 2026-07-16 | MPL-2.0; exact published PEM hash matched the bundled file. Preserve source data and notices. |
 | rxvt-unicode terminal descriptions | 9.31 | GPL-3.0-or-later per original source; only compiled terminal data is bundled, not the terminal application. Source inputs staged. |
 | kitty terminal descriptions | 0.48.2 | GPL-3.0-or-later; same limited data scope. |
