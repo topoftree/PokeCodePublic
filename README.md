@@ -57,8 +57,8 @@ Screenshots supplied by the author. Tap an image to view it at full size. Some s
 
 <table>
   <tr>
-    <td align="center"><strong>1. Chat</strong><br><a href="screenshots/01-chat.png"><img src="screenshots/01-chat.png" width="260" alt="Pokecode Chat with demo prompts"></a></td>
-    <td align="center"><strong>2. Terminal</strong><br><a href="screenshots/02-terminal.png"><img src="screenshots/02-terminal.png" width="260" alt="Pokecode embedded Terminal running Codex"></a></td>
+    <td align="center"><strong>1. Chat</strong><br><a href="screenshots/01-chat.jpg"><img src="screenshots/01-chat.jpg" width="260" alt="Pokecode Chat showing a multiple-choice follow-up and Codex replies"></a></td>
+    <td align="center"><strong>2. Full-screen Terminal</strong><br><a href="screenshots/02-terminal.png"><img src="screenshots/02-terminal.png" width="260" alt="Pokecode embedded Terminal running Codex"></a></td>
   </tr>
   <tr>
     <td align="center"><strong>3. Chat start</strong><br><a href="screenshots/03-chat-start.png"><img src="screenshots/03-chat-start.png" width="260" alt="Pokecode Chat start screen"></a></td>
@@ -75,6 +75,10 @@ Screenshots supplied by the author. Tap an image to view it at full size. Some s
   <tr>
     <td align="center"><strong>9. Launcher prompt group</strong><br><a href="screenshots/09-launcher-group.png"><img src="screenshots/09-launcher-group.png" width="260" alt="Pokecode Launcher with a pending versioned prompt group and send, copy, and share controls"></a></td>
     <td align="center"><strong>10. Time Capsule calendar</strong><br><a href="screenshots/10-time-capsule-calendar.png"><img src="screenshots/10-time-capsule-calendar.png" width="260" alt="Pokecode Time Capsule calendar with saved submissions for the selected day"></a></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>11. Terminal animation</strong><br><a href="screenshots/11-terminal-space.jpg"><img src="screenshots/11-terminal-space.jpg" width="260" alt="Pokecode Terminal space-cabin animation with a live terminal on the laptop screen"></a></td>
+    <td align="center"><strong>12. Usage</strong><br><a href="screenshots/12-usage.jpg"><img src="screenshots/12-usage.jpg" width="260" alt="Pokecode Usage page with project and session filters, daily chart, and all-time token totals"></a></td>
   </tr>
 </table>
 
