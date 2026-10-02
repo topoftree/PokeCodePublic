@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.7.6.7**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-01**.
+Release: **0.1.7.7.3.3**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-02**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -13,6 +13,41 @@ The original review covers 15 distinct external production dependency declaratio
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes in v0.1.7.7.3.3 (since public v0.1.7.6.7)
+
+The Terminal scenes add `app.rive:rive-android:11.12.1` (MIT), plus Volley
+1.2.1 and ReLinker 1.4.5 (Apache-2.0). AndroidX CustomView resolves from 1.0.0
+to 1.1.0 and Startup Runtime from 1.1.1 to 1.2.0, both Apache-2.0. Other
+production dependency declarations retain their versions. The resolved release
+graph and publisher POMs were checked; the updated component rows and copyright
+notices below reflect these changes.
+
+The APK adds ARM64 `librive-android.so` and `libc++_shared.so`. Rive's runtime,
+renderer and bundled native components use MIT, Apache-2.0, ISC, CC0 and
+Apache-2.0 with LLVM exceptions, as detailed in the
+[Rive inventory and license texts](third_party_licenses/rive/README.md).
+The ten pre-existing native libraries are byte-identical to the previous public
+APK. Its bootstrap, embedded package repository, AAPT2 binary, third-party
+source archives and existing license texts also remain unchanged. The two
+AndroidX version markers above change; the other 74 previous markers match.
+
+Desk and space-cabin artwork uses approved generated images based on owner
+references and independently authored animation vectors. No third-party asset
+pack, font, audio or model weight was added. The p5 compatibility hooks are
+Pokecode integration code; the user's watercolor HTML and its p5/p5.brush
+libraries are not bundled in the production APK. Debug-only browser fixtures
+are excluded.
+
+The existing Apache-2.0 terminal-view module now permits a host subclass to gate
+preview input while retaining its renderer and session. Existing attribution and
+license texts remain in place.
+
+No newly introduced or changed GPL, AGPL, LGPL or other potentially conflicting
+dependency was identified in this delta. Existing runtime source-delivery and
+copyleft integration issues, ReVanced AAPT2 license scope and Google SDK
+obligations remain unresolved; this review does not establish overall licensing
+clearance.
 
 ### Changes in v0.1.7.6.7 (since public v0.1.7.5)
 
@@ -232,7 +267,7 @@ Each coordinate specifies the exact resolved version. Copyright holders remain t
 | `androidx.core:core:1.18.0` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx/releases/core#1.18.0) | [notices](third_party_licenses/maven/androidx.core__core__1.18.0/) |
 | `androidx.cursoradapter:cursoradapter:1.0.0` | Apache-2.0 | [publisher](http://developer.android.com/tools/extras/support-library.html) | [notices](third_party_licenses/maven/androidx.cursoradapter__cursoradapter__1.0.0/) |
 | `androidx.customview:customview-poolingcontainer:1.0.0` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx/releases/customview#1.0.0) | [notices](third_party_licenses/maven/androidx.customview__customview-poolingcontainer__1.0.0/) |
-| `androidx.customview:customview:1.0.0` | Apache-2.0 | [publisher](http://developer.android.com/tools/extras/support-library.html) | [notices](third_party_licenses/maven/androidx.customview__customview__1.0.0/) |
+| `androidx.customview:customview:1.1.0` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx/releases/customview#1.1.0) | [notices](third_party_licenses/maven/androidx.customview__customview__1.1.0/) |
 | `androidx.documentfile:documentfile:1.0.0` | Apache-2.0 | [publisher](http://developer.android.com/tools/extras/support-library.html) | [notices](third_party_licenses/maven/androidx.documentfile__documentfile__1.0.0/) |
 | `androidx.drawerlayout:drawerlayout:1.0.0` | Apache-2.0 | [publisher](http://developer.android.com/tools/extras/support-library.html) | [notices](third_party_licenses/maven/androidx.drawerlayout__drawerlayout__1.0.0/) |
 | `androidx.dynamicanimation:dynamicanimation:1.0.0` | Apache-2.0 | [publisher](http://developer.android.com/tools/extras/support-library.html) | [notices](third_party_licenses/maven/androidx.dynamicanimation__dynamicanimation__1.0.0/) |
@@ -266,7 +301,7 @@ Each coordinate specifies the exact resolved version. Copyright holders remain t
 | `androidx.savedstate:savedstate-android:1.4.0` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx/releases/savedstate#1.4.0) | [notices](third_party_licenses/maven/androidx.savedstate__savedstate-android__1.4.0/) |
 | `androidx.savedstate:savedstate-compose-android:1.4.0` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx/releases/savedstate#1.4.0) | [notices](third_party_licenses/maven/androidx.savedstate__savedstate-compose-android__1.4.0/) |
 | `androidx.savedstate:savedstate-ktx:1.4.0` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx/releases/savedstate#1.4.0) | [notices](third_party_licenses/maven/androidx.savedstate__savedstate-ktx__1.4.0/) |
-| `androidx.startup:startup-runtime:1.1.1` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx/releases/startup#1.1.1) | [notices](third_party_licenses/maven/androidx.startup__startup-runtime__1.1.1/) |
+| `androidx.startup:startup-runtime:1.2.0` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx/releases/startup#1.2.0) | [notices](third_party_licenses/maven/androidx.startup__startup-runtime__1.2.0/) |
 | `androidx.tracing:tracing:1.2.0` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx/releases/tracing#1.2.0) | [notices](third_party_licenses/maven/androidx.tracing__tracing__1.2.0/) |
 | `androidx.transition:transition:1.6.0` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx/releases/transition#1.6.0) | [notices](third_party_licenses/maven/androidx.transition__transition__1.6.0/) |
 | `androidx.vectordrawable:vectordrawable-animated:1.1.0` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx) | [notices](third_party_licenses/maven/androidx.vectordrawable__vectordrawable-animated__1.1.0/) |
@@ -311,6 +346,9 @@ Each coordinate specifies the exact resolved version. Copyright holders remain t
 | `org.jetbrains:annotations:23.0.0` | Apache-2.0 | [publisher](https://github.com/JetBrains/java-annotations) | [notices](third_party_licenses/maven/org.jetbrains__annotations__23.0.0/) |
 | `org.jspecify:jspecify:1.0.0` | Apache-2.0 | [publisher](http://jspecify.org/) | [notices](third_party_licenses/maven/org.jspecify__jspecify__1.0.0/) |
 | `org.reactivestreams:reactive-streams:1.0.3` | CC0-1.0 | [publisher](http://www.reactive-streams.org/) | [CC0 text](third_party_licenses/CC0-1.0.txt) |
+| `app.rive:rive-android:11.12.1` | MIT; bundled native components have the individual grants in the linked inventory | [publisher](https://github.com/rive-app/rive-android/tree/11.12.1) | [Rive inventory](third_party_licenses/rive/README.md), [MIT text](third_party_licenses/rive/RIVE-ANDROID-LICENSE.txt) |
+| `com.android.volley:volley:1.2.1` | Apache-2.0 | [publisher](https://github.com/google/volley/tree/1.2.1) | [license and copyright](third_party_licenses/rive/VOLLEY-LICENSE.txt) |
+| `com.getkeepsafe.relinker:relinker:1.4.5` | Apache-2.0 | [publisher](https://github.com/KeepSafe/ReLinker/tree/1.4.5) | [license and copyright](third_party_licenses/rive/RELINKER-LICENSE.txt) |
 
 `javax.inject:1` has no license declaration in the retrieved POM; its source `Inject.java` explicitly grants Apache-2.0 and credits the JSR-330 Expert Group. The permission was verified from that source rather than guessed.
 
@@ -404,6 +442,7 @@ These are package records, not an additive count of entirely independent upstrea
 | --- | --- | --- |
 | Pokecode icon1/icon2 and derived system/adaptive/monochrome icons | Owner confirmed original icon artwork was ChatGPT-generated on 2026-09-09; system variants derive from that artwork | Owner-provided artwork; not assigned a third-party open-source license. This records supplied provenance, not a trademark or third-party-right warranty. |
 | Twelve UFO animation frames | Owner-supplied numbered sequence imported for v0.1.6.5.3, with cropping, transparency and scaling | Replaces the earlier six-frame artwork. No third-party open-source license is assigned; the older six-image ChatGPT confirmation is not treated as independent verification of this replacement sequence. |
+| Terminal desk and space-cabin scenes | Approved generated portrait/landscape artwork based on owner references, with independently authored animated vector limbs and stars | Pokecode artwork; no third-party open-source license is assigned. No external font, audio or asset pack is embedded. The Rive runtime retains its separate licenses above. |
 | Compose Material icons and standalone session vector | 1.7.8 release artifacts; Google Material Design Icons `forum` (outlined), adapted for the Block session button | Apache-2.0; original component notices and full license text retained above. |
 | Mozilla/curl certificate store | 2026-07-16 | MPL-2.0; exact published PEM hash matched the bundled file. Preserve source data and notices. |
 | rxvt-unicode terminal descriptions | 9.31 | GPL-3.0-or-later per original source; only compiled terminal data is bundled, not the terminal application. Source inputs staged. |
