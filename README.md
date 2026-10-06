@@ -22,14 +22,15 @@ Send a Block individually, or link several Blocks into a versioned group. Blocks
 
 ## Main features
 
-- Notes with Blocks and Subblocks, Cut/Paste, pinning, search, and progressive loading for large Notes. Sent Blocks are read-only and do not open the keyboard.
+- Notes with Blocks and Subblocks, Cut/Paste, pinning, search, and progressive loading for large Notes. Queued and sent Subblocks are read-only; each Note has a Project-scoped default branch/session and Agent, with per-Block overrides.
 - Project workspaces, Categories with selectable icons, and reusable templates with shared names.
 - Launcher for preparing linked content, persistent pending sends with cancellation and Send now, and selecting multiple Blocks to unlink while keeping the original Note content.
-- Time Capsule for browsing saved submission snapshots, resending groups, and keeping generated APK/HTML outputs. Codex token statistics are in **Settings → Usage**, with Project, session, model and reasoning filters.
+- Time Capsule for browsing saved submission snapshots, resending groups, and keeping generated APK/HTML outputs. Task summaries start collapsed and retain timing, activity and code-change totals; history reports export as PDF, text or Word. Codex token statistics are in **Settings → Usage**, with Project, session, model and reasoning filters.
 - Trash with restoration of deleted Notes and Blocks.
 - Export Notes as Word documents (`.docx`), UTF-8 text, or PDF.
-- Chat sessions with attachments, a pen/eraser sketch editor, streamed responses, task controls, queued-message actions, and persistent Codex follow-up dialogs whose accepted answers appear in Chat.
-- Project-scoped Local and Codex Cloud sessions, selectable from Chat and individual Blocks. Cloud uses the official Codex CLI and a connected repository environment.
+- Chat sessions with clickable web/file links, final-deliverable attachments, a pen/eraser sketch editor, streamed responses, task activity, queued-message actions, and persistent Codex follow-up dialogs whose accepted answers appear in Chat.
+- Independent Chat conversations and sessions, Project branch workspaces, explicit GitHub Sync and local Merge. Cloud uses the official Codex CLI and a connected repository environment.
+- Chat Voice Mode with an audio-reactive orb, background audio and notification controls, plus a Plan mode toggle beside the focused composer's model selector.
 - An embedded terminal with light and dark palettes, resumable initialization, and Codex/GitHub sign-in. Two animated desk/space-cabin scenes show the live session; swipe four fingers left or right to switch scenes, or tap the laptop screen to expand Terminal.
 - Terminal settings for runtime updates, shared Android SDK setup, JDK/Gradle Wrapper health checks, dependency repair, optional-plugin update warnings, and global Bun package updates that preserve Project dependencies.
 - Game project mode with optional Godot installation, matching Android export templates, and shared setup state across Initialization and Project settings.
@@ -49,7 +50,13 @@ Framework Web previews use the Project's development server, including routing a
 
 Open **Settings → Usage** for input, output and cached-token totals, cache hit rate, model/reasoning breakdowns and estimated USD cost. Daily, weekly and monthly bars scroll continuously through dates. Tap a bar to filter the totals to that period; tap it again to restore all-time totals. Filter by Project/session. Standard model prices refresh automatically from OpenAI's published pricing, including after managed Codex updates; cached prices remain available offline. Missing historical fields and unknown prices are not invented. These are estimates from locally recorded usage, not subscription charges or complete Cloud usage histories. Time Capsule retains submission history and its calendar.
 
-Chat's centered **Project • session** menu changes the current conversation's session without adding another conversation. Blocks have a compact session list. Long-press Send to select model, reasoning, Permission, Speed and Preview settings without starting Codex; saved supported Local settings are confirmed before the prompt is delivered. Cloud tasks use their own environment/model settings. New Cloud tasks require a valid connected repository environment and Cloud access; upstream access/network failures are reported and are not claimed fixed by the app.
+New Chat conversations start in **Unclassified** with their own session. Use the centered header to move an unclassified Local conversation into a Project and create its branch; the resulting Project/branch binding stays fixed. Rename the branch from the Chat drawer when every Codex session in that Project is stopped. Notes choose their default branch/session within their own Project; individual Blocks can override the Note's destination and Agent. Long-press Send to select model, reasoning, Permission, Speed and Preview settings without starting Codex; saved supported Local settings are confirmed before the prompt is delivered. Cloud tasks use their own environment/model settings. New Cloud tasks require a valid connected repository environment and Cloud access; upstream access/network failures are reported and are not claimed fixed by the app.
+
+Block and Launcher sends queue individual Subblocks. Long-press a Subblock and choose **Select** to send a chosen subset. Queued Subblocks are locked against editing and have individual cancellation controls; cancelling makes them editable again. Tap a Chat queue item to return to its source Subblock. Automatic final APK/HTML generation waits until every input in the version group has been delivered and its task has completed.
+
+GitHub Projects support repository import or binding an existing checkout, separate branch workspaces, explicit bidirectional **Sync**, and local **Merge**. Automatic task commits stay local. On Sync, renaming an already-published branch uses GitHub's branch-rename operation; failures are reported without silently publishing a second branch.
+
+With an empty Chat composer, tap **Voice Mode** to start Codex and a voice conversation. It is separate from microphone dictation: audio is sent to the Codex voice service through your signed-in account, and microphone permission is required. Swipe the orb down to minimize it; Voice Mode continues across pages with an ongoing notification showing the latest reply and **Mute / Unmute** and **Close Voice Mode** controls. Account availability, connectivity, Android System WebView and Android background restrictions apply. The embedded Terminal's `/voice` command still has a separate audio-device path; use Chat's Voice Mode for Android microphone/speaker integration.
 
 ## Screenshots
 
@@ -86,19 +93,19 @@ Screenshots supplied by the author. Tap an image to view it at full size. Some s
 
 Visit [Pokecode Releases](https://github.com/topoftree/PokeCodePublic/releases) for official APKs, release notes, SHA-256 checksums, and accompanying third-party materials.
 
-Download [Pokecode-v0.1.7.7.3.3.apk](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.7.7.3.3/Pokecode-v0.1.7.7.3.3.apk) and [SHA256SUMS.txt](https://github.com/topoftree/PokeCodePublic/releases/download/v0.1.7.7.3.3/SHA256SUMS.txt) from the latest release. Review its known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
+Version 0.1.7.9.2 is prepared for manual publication. Its [release notes](releases/v0.1.7.9.2/README.md) and [SHA256SUMS.txt](releases/v0.1.7.9.2/SHA256SUMS.txt) are available here; `Pokecode-v0.1.7.9.2.apk` becomes available on the [version's release page](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.7.9.2) after the maintainer uploads and publishes it. The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) lists published APKs. Review the known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
 
-## Latest release
+## Current version
 
-The latest release is [**Pokecode 0.1.7.7.3.3**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.7.7.3.3) (Android version code **356**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available versions.
+The current version is **Pokecode 0.1.7.9.2** (Android version code **377**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available downloads.
 
-Changes since public v0.1.7.6.7 add two animated Terminal scenes with four-finger switching, smooth transitions and tap-to-expand access to the same live session. Full-screen gestures retain normal terminal scrolling and selection.
+Changes since public v0.1.7.7.3.3 add Chat Voice Mode with background notification controls, the focused-composer Plan mode button, independent conversation/session bindings, and GitHub Project import, Sync, Merge and remote branch rename.
 
-Preview reuses unchanged Compose/XML preparation, shares asynchronous WebView startup and suspends hidden browser presentation. HTML drawing improvements include CPU-backed p5.brush masks and preservation of explicit p5.js 2.2.2 WebGL pixel density, reducing unintended high-resolution rendering work.
+Notes gain default branch/session and Agent choices, Subblock queues, multi-selection and individual cancellation. Final generation waits for all version-group inputs. Chat links open their web/file targets and completed tasks retain deliverable attachments. Time Capsule gains collapsed task summaries, activity/diff details and report export.
 
-Chat retains its session through provider network retries and offers a compact reaction picker. Its jump-to-bottom button appears when scrolling stops away from the bottom in either direction, disappears when scrolling resumes and expires after three idle seconds. Tapping blank Note space places the caret at the nearest editable position. Usage moves to Settings with tap-to-filter charts, and lock-screen notifications now include current process details.
+This release includes fixes for startup crashes while restoring Git-control messages, unintended Codex restart attempts and shared conversation runtimes, and Voice Mode's protocol-header rejection. Preview reuses native compiler sessions and chooses project-aware refresh strategies; backup categories preserve their separate scopes.
 
-The signed production APK uses R8 optimization and resource shrinking; the original signing identity and runtime paths are retained. Host checks and compiled Android test sources do not establish installed-device behavior. S24 Ultra gestures, Chrome/WebView performance, upgrade and signed-in Cloud checks remain manual validation items.
+The signed production APK uses R8 optimization and resource shrinking; the original signing identity and runtime paths are retained. Release signature, package/version, ZIP integrity and 16 KiB alignment were verified. Authenticated voice calls, microphone/speaker/Bluetooth behavior, background audio and installed-device upgrades still need device validation.
 
 The Android runtime uses a compatibility execution path; its access boundaries are described under [Security and APK verification](#security-and-apk-verification). Third-party notice changes and existing obligations are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
