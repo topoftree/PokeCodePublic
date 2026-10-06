@@ -93,7 +93,7 @@ Screenshots supplied by the author. Tap an image to view it at full size. Some s
 
 Visit [Pokecode Releases](https://github.com/topoftree/PokeCodePublic/releases) for official APKs, release notes, SHA-256 checksums, and accompanying third-party materials.
 
-Version 0.1.7.9.2 is prepared for manual publication. Its [release notes](releases/v0.1.7.9.2/README.md) and [SHA256SUMS.txt](releases/v0.1.7.9.2/SHA256SUMS.txt) are available here; `Pokecode-v0.1.7.9.2.apk` becomes available on the [version's release page](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.7.9.2) after the maintainer uploads and publishes it. The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) lists published APKs. Review the known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
+The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) lists published APKs. Review the known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
 
 ## Current version
 
