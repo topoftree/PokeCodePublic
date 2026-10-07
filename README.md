@@ -42,6 +42,8 @@ Send a Block individually, or link several Blocks into a versioned group. Blocks
 
 External services, accounts, downloaded tools, and model availability can affect individual workflows. Ubuntu and external AI services require separate setup; they are not provided by this repository.
 
+Chat code blocks wrap long lines and provide a **Copy code** button for the complete original text. Complete JSON is indented for reading without changing what is copied; incomplete or oversized content stays as received. In a lifted user or Codex message, long-press the text to select it directly while retaining the rendered Markdown and code blocks.
+
 Compiled Android previews require the Project's Gradle/JDK/Android SDK setup. They prepare resources and code through the selected Terminal's Ubuntu login and toolchain profiles without generating an application APK. Nested Android projects can use their own build settings with an ancestor Gradle Wrapper. Unsupported or failed preparation reports an error with selectable Details and Retry.
 
 Android Preview shares SDK setup with Initialization and Terminal Update. Preparation validates the selected module, source set, resources and Compose entry, reports its current stage, and cleans up cancelled or failed work before Retry.
@@ -107,15 +109,15 @@ The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) lists 
 
 ## Current version
 
-The current version is **Pokecode 0.1.7.9.9.1** (Android version code **388**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available downloads.
+The current version is **Pokecode 0.1.7.9.9.2** (Android version code **389**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available downloads.
 
-Changes since public 0.1.7.9.2 add live voice subtitles, multi-session control, voice choices and cached auditions, audio routing, recording history and recovery from transient connection failures. Rapid voice changes wait for transport readiness and keep live audio paused during replacement.
+Changes since public 0.1.7.9.9.1 add code-block copying, wrapped long lines and display-only JSON indentation. Text can be selected directly inside a lifted Chat message, replacing the separate selection page.
 
-Chat and long-press Send gain adaptive model-settings cards with pinned Cancel/Apply actions. Chat's paged actions add Release; Plan-mode model/effort display follows the active mode. Notes gain draggable attachment-to-Subblock bindings. Usage reads the complete available Overview; Weekly limit shows available reset credits with explicit redemption controls.
+Preview now uses the app theme across its full page, loading state and inset areas, keeping text and indicators readable when the app and Android use different light/dark settings.
 
-This release also reserves Android Back-gesture edges from drawer recognition, reduces repeated work while Codex is running, improves conversation-derived branch naming and avoids transient Note connection-error flashes. Voice notification and floating-header controls have been refined.
+Voice Mode resolves session control through its coordinating Codex Session instead of a stale copied endpoint path, and distinguishes a missing control file from an ended audio call. After installing this update, restart the coordinating Codex Session once so it inherits the updated control context. Submitted tasks are not automatically replayed.
 
-The signed production APK uses R8 optimization and resource shrinking; the original signing identity and runtime paths are retained. Release signature, package/version, ZIP integrity and 16 KiB alignment were verified. Authenticated voice calls, microphone/speaker/Bluetooth behavior, background audio and installed-device upgrades still need device validation.
+The signed production APK uses R8 optimization and resource shrinking; the original signing identity and runtime paths are retained. Release signature, package/version, ZIP integrity and 16 KiB alignment were verified. Clipboard/touch selection, theme changes, authenticated voice/session control and installed-device upgrades still need device validation.
 
 The Android runtime uses a compatibility execution path; its access boundaries are described under [Security and APK verification](#security-and-apk-verification). Third-party notice changes and existing obligations are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
