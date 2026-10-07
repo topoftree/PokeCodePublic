@@ -87,6 +87,10 @@ Screenshots supplied by the author. Tap an image to view it at full size. Some s
     <td align="center"><strong>11. Terminal animation</strong><br><a href="screenshots/11-terminal-space.jpg"><img src="screenshots/11-terminal-space.jpg" width="260" alt="Pokecode Terminal space-cabin animation with a live terminal on the laptop screen"></a></td>
     <td align="center"><strong>12. Usage</strong><br><a href="screenshots/12-usage.jpg"><img src="screenshots/12-usage.jpg" width="260" alt="Pokecode Usage page with project and session filters, daily chart, and all-time token totals"></a></td>
   </tr>
+  <tr>
+    <td align="center"><strong>13. Voice Mode</strong><br><a href="screenshots/13-voice-mode.jpg"><img src="screenshots/13-voice-mode.jpg" width="260" alt="Pokecode full-screen Voice Mode with a green orb while connecting to Codex"></a><br>Full-screen voice conversations with Codex.</td>
+    <td align="center"><strong>14. Attachments and Subblocks</strong><br><a href="screenshots/14-attachment-links.jpg"><img src="screenshots/14-attachment-links.jpg" width="260" alt="Pokecode Note editor with six colored attachment cards connected to three Subblocks"></a><br>Color-coded connections assign attachments to individual Subblocks.</td>
+  </tr>
 </table>
 
 ## Download
