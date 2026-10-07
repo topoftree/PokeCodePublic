@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.7.9.2**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-06**.
+Release: **0.1.7.9.9.1**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-06**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -13,6 +13,32 @@ The original review covers 15 distinct external production dependency declaratio
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes in v0.1.7.9.9.1 (since public 0.1.7.9.2)
+
+Production dependency declarations, existing third-party native/runtime payloads, fonts,
+scene artwork and license text files retain their versions and bytes. No new
+third-party library, speech model or bundled greeting recording was introduced.
+The new voice, bank-reset and release helpers are Pokecode integration code;
+voice recording and playback use the existing Android/WebView facilities.
+
+The Release action adds an owner-supplied transparent GitHub/tag PNG, tinted
+by the application. No third-party open-source license is assigned to this
+supplied artwork; its provenance does not establish trademark clearance or
+independent rights verification. Other added controls reuse the existing
+Material icon dependency and attribution.
+
+Voice auditions now download and privately cache fixed greeting samples from
+OpenAI's HTTPS service. Those recordings are not distributed in the APK or this
+repository. Provider content/service terms apply; network availability is not
+a grant to redistribute the recordings, and no open-source license is inferred.
+The connection cue is synthesized locally.
+
+No newly introduced or changed GPL, AGPL, LGPL or other potentially conflicting
+third-party dependency was identified in this delta. The previously documented
+runtime source-delivery/integration, ReVanced AAPT2 license-scope and Google SDK
+obligations remain unresolved. This review does not establish overall licensing
+clearance. Existing license text files are preserved.
 
 ### Changes in v0.1.7.9.2 (since public v0.1.7.7.3.3)
 
@@ -476,6 +502,7 @@ These are package records, not an additive count of entirely independent upstrea
 | Compose Material icons and standalone session vector | 1.7.8 release artifacts; Google Material Design Icons `forum` (outlined), adapted for the Block session button | Apache-2.0; original component notices and full license text retained above. |
 | OpenAI and GitHub brand vectors | Simple Icons 14.15.0; converted to Android vectors | CC0-1.0; [provenance and full text](third_party_licenses/simple-icons/README.md). Trademark rights are separate. |
 | Codex brand vector | Lobe Icons commit `82e641b4fece9d1028a127149af9ded00df5ac0c`; converted to an Android vector with expanded SVG arc parameters | MIT; [provenance and full text](third_party_licenses/lobe-icons/README.md). Trademark rights are separate. |
+| Release action GitHub/tag PNG | Owner-supplied transparent artwork, added in v0.1.7.9.9.1 and tinted by the application | No third-party open-source license assigned; supplied provenance does not establish trademark or third-party-right clearance. |
 | Mozilla/curl certificate store | 2026-07-16 | MPL-2.0; exact published PEM hash matched the bundled file. Preserve source data and notices. |
 | rxvt-unicode terminal descriptions | 9.31 | GPL-3.0-or-later per original source; only compiled terminal data is bundled, not the terminal application. Source inputs staged. |
 | kitty terminal descriptions | 0.48.2 | GPL-3.0-or-later; same limited data scope. |
