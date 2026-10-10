@@ -22,19 +22,19 @@ Send a Block individually, or link several Blocks into a versioned group. Blocks
 
 ## Main features
 
-- Notes with Blocks and Subblocks, Cut/Paste, pinning, search, and progressive loading for large Notes. Queued and sent Subblocks are read-only; each Note has a Project-scoped default branch/session and Agent, with per-Block overrides.
+- Notes with Blocks and Subblocks, batch Copy/Cut/Delete, pinning, search, and progressive loading for large Notes. **Ai Refine** in the Note menu and the Block AI button ask Codex to organize and polish the selected content. Queued and sent Subblocks are read-only; each Note has a Project-scoped default branch/session and Agent, with per-Block overrides.
 - Project workspaces, Categories with selectable icons, and reusable templates with shared names.
 - Launcher for preparing linked content, persistent pending sends with cancellation and Send now, and selecting multiple Blocks to unlink while keeping the original Note content.
 - Time Capsule for browsing saved submission snapshots, resending groups, and keeping generated APK/HTML outputs. Task summaries start collapsed and retain timing, activity and code-change totals; history reports export as PDF, text or Word. Codex token statistics are in **Settings → Usage**, with Project, session, model and reasoning filters.
 - Trash with restoration of deleted Notes and Blocks.
 - Export Notes as Word documents (`.docx`), UTF-8 text, or PDF.
-- Chat sessions with clickable web/file links, final-deliverable attachments, a pen/eraser sketch editor, streamed responses, task activity, queued-message actions, and persistent Codex follow-up dialogs whose accepted answers appear in Chat.
+- Chat sessions with clickable web/file links, final-deliverable attachments, a pen/eraser sketch editor, streamed responses, task activity, reordered queued messages, per-conversation Full auto, and persistent Codex follow-up dialogs whose accepted answers appear in Chat. Archive conversations and manage installed Codex Skills and Plugins, including plugin browsing.
 - Independent Chat conversations and sessions, Project branch workspaces, explicit GitHub Sync and local Merge. Cloud uses the official Codex CLI and a connected repository environment.
 - Chat Voice Mode with live subtitles, voice choices and cached greeting previews, audio-output selection, reconnection and background notification controls. One call can coordinate multiple Local Sessions; recent microphone recordings stay in app-private history.
 - An embedded terminal with light and dark palettes, resumable initialization, and Codex/GitHub sign-in. Two animated desk/space-cabin scenes show the live session; swipe four fingers left or right to switch scenes, or tap the laptop screen to expand Terminal.
-- Terminal settings for runtime updates, shared Android SDK setup, JDK/Gradle Wrapper health checks, dependency repair, optional-plugin update warnings, and global Bun package updates that preserve Project dependencies.
+- Terminal settings for runtime updates, shared Android SDK setup, JDK/Gradle Wrapper health checks, dependency repair, optional-plugin update warnings, and global Bun package updates that preserve Project dependencies. **Version** displays cached installed-tool versions. Optional weekly updates start when the app is open, without background auto-start; an update already running can finish after leaving the app.
 - Game project mode with optional Godot installation, matching Android export templates, and shared setup state across Initialization and Project settings.
-- Phone file-access modes with verified Storage Helper installation, plus a Terminal wake-lock control for work with the screen off.
+- Built-in phone file-access modes and Android permission controls, plus a Terminal wake-lock control for work with the screen off. A separate Storage Helper installation is no longer required.
 - Background backup and restore with progress notifications and cancellation controls.
 - Session-scoped Preview with HTML, framework Web apps, Android Layout, Compose, Kotlin View and Java View entries, retained rendering across navigation, white rendering/green completion dots, and error Details with Retry.
 - Android App prompt Preview mode: version-linked Block/Launcher sends can ask Codex to complete and verify changes, then wait for explicit confirmation before building an APK.
@@ -45,6 +45,8 @@ External services, accounts, downloaded tools, and model availability can affect
 Chat code blocks wrap long lines and provide a **Copy code** button for the complete original text. Complete JSON is indented for reading without changing what is copied; incomplete or oversized content stays as received. In a lifted user or Codex message, long-press the text to select it directly while retaining the rendered Markdown and code blocks.
 
 Compiled Android previews require the Project's Gradle/JDK/Android SDK setup. They prepare resources and code through the selected Terminal's Ubuntu login and toolchain profiles without generating an application APK. Nested Android projects can use their own build settings with an ancestor Gradle Wrapper. Unsupported or failed preparation reports an error with selectable Details and Retry.
+
+Full Android application preview can also build and install the Project's APK after task completion. Web project detection supports more development servers and configured web targets, including Expo/React Native Web, Flutter Web and Godot web exports. Each target still requires its corresponding installed tools and project configuration; native-only mobile or desktop targets are not arbitrary WebView previews. Automatic refresh waits for the active Codex task to finish.
 
 Android Preview shares SDK setup with Initialization and Terminal Update. Preparation validates the selected module, source set, resources and Compose entry, reports its current stage, and cleans up cancelled or failed work before Retry.
 
@@ -60,9 +62,13 @@ Connect attachments to individual Subblocks by holding and dragging their colore
 
 GitHub Projects support repository import or binding an existing checkout, separate branch workspaces, explicit bidirectional **Sync**, and local **Merge**. Automatic task commits stay local. On Sync, renaming an already-published branch uses GitHub's branch-rename operation; failures are reported without silently publishing a second branch.
 
+Local Codex can use app-management tools to work with Notes and Projects and track Chat tasks in Time Capsule. Project suggestions appear as confirmation cards in Chat. These tools use the app's existing data and workflow controls.
+
+Pull upward from the Chat composer, or drag the white line above Terminal's bottom navigation, to reveal live **Chat / Terminal** page cards. Both previews retain their page proportions, and selecting a card keeps the menu open. Drag down or press Back to close it. Terminal is now reached through this switcher instead of a separate bottom-navigation tab.
+
 Swipe Chat's **+** actions to the second page for **Release**, which asks Codex to publish the currently bound branch. Literal `main` selects a regular release; other branches select a pre-release. This requires an idle, prepared Local GitHub binding and suitable repository permissions. Retry retains the intended release plan; success checks the remote tag, release type and intended uploads.
 
-With an empty Chat composer, tap **Voice Mode** to start Codex and a voice conversation. It is separate from microphone dictation: audio is sent to the Codex voice service through your signed-in account, and microphone permission is required. Swipe the orb down to minimize it and up to expand it. The full-screen controls include subtitles and a settings gear for voice and audio-output choices. Voice Mode continues across pages with an ongoing notification showing the current spoken reply and **Mute / Unmute** and **Close** controls. Temporary connection failures retain the call controls and offer bounded reconnection; account and audio errors remain explicit.
+With an empty Chat composer, tap **Voice Mode** to start Codex and a voice conversation. It is separate from microphone dictation: audio is sent to the Codex voice service through your signed-in account, and microphone permission is required. Swipe the orb down to minimize it and up to expand it. The full-screen controls include subtitles and a settings gear for voice and audio-output choices. Voice Mode continues across pages with a native ongoing-call notification, an orb portrait, elapsed time, **Mute / Unmute** and hang-up controls. Temporary connection failures retain the call controls and offer bounded reconnection; account and audio errors remain explicit.
 
 Choose among nine voices in **Settings → Voice Mode** or the in-call settings. Fixed greeting samples download over HTTPS and are cached for later offline auditions; they are not bundled in the APK. Voice switching and auditions pause live microphone/output and preserve the mute choice. **Voice record history** retains the latest 20 user microphone recordings in app-private storage for playback. One voice call can address multiple running Local Sessions without stopping tasks already submitted when the call closes. Account availability, connectivity, Android System WebView and Android background restrictions apply. The embedded Terminal's `/voice` command still has a separate audio-device path; use Chat's Voice Mode for Android microphone/speaker integration.
 
@@ -99,6 +105,9 @@ Screenshots supplied by the author. Tap an image to view it at full size. Some s
     <td align="center"><strong>13. Voice Mode</strong><br><a href="screenshots/13-voice-mode.jpg"><img src="screenshots/13-voice-mode.jpg" width="260" alt="Pokecode full-screen Voice Mode with a green orb while connecting to Codex"></a><br>Full-screen voice conversations with Codex.</td>
     <td align="center"><strong>14. Attachments and Subblocks</strong><br><a href="screenshots/14-attachment-links.jpg"><img src="screenshots/14-attachment-links.jpg" width="260" alt="Pokecode Note editor with six colored attachment cards connected to three Subblocks"></a><br>Color-coded connections assign attachments to individual Subblocks.</td>
   </tr>
+  <tr>
+    <td align="center" colspan="2"><strong>15. Live Chat / Terminal switcher</strong><br><a href="screenshots/15-live-page-switcher.jpg"><img src="screenshots/15-live-page-switcher.jpg" width="260" alt="Pokecode 0.1.8.1.3 Chat with compact live Chat and Terminal previews in the pull-up page switcher"></a><br>Pull up to switch pages while keeping the live preview menu open.</td>
+  </tr>
 </table>
 
 ## Download
@@ -109,15 +118,15 @@ The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) lists 
 
 ## Current version
 
-The current version is **Pokecode 0.1.7.9.9.2** (Android version code **389**). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available downloads.
+The current version is **Pokecode 0.1.8.1.3** (Android version code **406**). Download the signed APK and checksum from its [GitHub Release](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.8.1.3). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available downloads.
 
-Changes since public 0.1.7.9.9.1 add code-block copying, wrapped long lines and display-only JSON indentation. Text can be selected directly inside a lifted Chat message, replacing the separate selection page.
+Since public 0.1.7.9.9.2, Chat and Terminal share a draggable switcher with proportional live previews. Chat adds conversation Archive, Skills/Plugins management, app-management tools and more queue controls. Notes add AI refinement, batch Subblock actions and improved attachment connections.
 
-Preview now uses the app theme across its full page, loading state and inset areas, keeping text and indicators readable when the app and Android use different light/dark settings.
+Phone file access is built in, Preview supports more project targets and full Android application builds, and Voice Mode uses native call notifications with a gentler draggable orb. Chat controls share translucent glass styling.
 
-Voice Mode resolves session control through its coordinating Codex Session instead of a stale copied endpoint path, and distinguishes a missing control file from an ended audio call. After installing this update, restart the coordinating Codex Session once so it inherits the updated control context. Submitted tasks are not automatically replayed.
+Automatic Terminal updates start only while Pokecode is open; old update and SDK telemetry wakeups are removed. Tool versions are cached under **Settings → Terminal → Version**, Start Codex is disabled during tool updates, and Weekly limit displays all available bank-reset credits. The Settings version footer is centered and fainter.
 
-The signed production APK uses R8 optimization and resource shrinking; the original signing identity and runtime paths are retained. Release signature, package/version, ZIP integrity and 16 KiB alignment were verified. Clipboard/touch selection, theme changes, authenticated voice/session control and installed-device upgrades still need device validation.
+The signed production APK uses R8 optimization and resource shrinking and retains the original signing identity. Signature, package/version, runtime assets, ZIP integrity, 16 KiB alignment and removal of automatic wakeup components were verified. Installed-device upgrades, live voice and touch interactions still need device validation.
 
 The Android runtime uses a compatibility execution path; its access boundaries are described under [Security and APK verification](#security-and-apk-verification). Third-party notice changes and existing obligations are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
@@ -143,11 +152,11 @@ Pokecode's wake lock helps Terminal commands, builds and Codex tasks keep runnin
 
 The wake lock has **no app-imposed time limit**. It remains held until you disable it, shut down Terminal, or its owning service stops. Release it when work finishes to save battery. Android's [battery and background restrictions](https://developer.android.com/training/monitoring-device-state/doze-standby) can still limit processing or network access.
 
-## Phone file access and Storage Helper
+## Phone file access
 
-Choose **Settings → Terminal → File access**: **App sandbox only**, **Selected phone files**, or **All phone files**. Modes that require Storage Helper offer an Install/Update prompt if a compatible Helper is missing. Pokecode downloads the official compatible release, verifies its checksum, package/version and signing certificate, and opens Android's installer. After installation, it resumes the original permission request; cancellation or failure keeps the previous mode.
+Choose **Settings → Terminal → File access**: **App sandbox only**, **Selected phone files**, or **All phone files**. Permission controls and file handling are now built into Pokecode; no separate helper APK is installed. Selected files/folders use Android's picker grants, and All phone files requires Android's all-files permission.
 
-Selected files/folders and all-files access still require the normal Android permission choices. The separate [Storage Helper release](https://github.com/topoftree/PokeCodePublic/releases/tag/storage-helper-v1.0.0) remains available independently of the main app.
+Restricted modes verify that the Android all-files grant is off. Selected phone files are exposed through `poke-files`; All phone files also permits direct shared-storage paths. Private app files retain their usual paths. The older [Storage Helper release](https://github.com/topoftree/PokeCodePublic/releases/tag/storage-helper-v1.0.0) is retained for older app versions.
 
 ## Android requirements
 
@@ -186,7 +195,7 @@ sha256sum -c SHA256SUMS.txt
 
 The result should say `OK` for the APK. A matching checksum confirms that the file matches the published bytes. It does not independently establish the publisher's identity; obtain both files from the official release page. Android also verifies the APK's signature during installation.
 
-Managed Codex sessions run through Pokecode's Android/PRoot compatibility path. Commands can access files and network resources available to Pokecode, including its private files; this does not provide Linux workspace-only or read-only confinement. Android app permissions and the selected phone file-access mode remain the outer boundary. Codex approval choices do not expand the Storage Helper's grants.
+Managed Codex sessions run through Pokecode's Android/PRoot compatibility path. Commands can access app-private files and available network resources; this does not provide Linux workspace-only or read-only confinement. A native Binder guard and authenticated file-access policy protect the managed phone-file bridge. Restricted modes require Android's all-files grant to be off; All phone files grants broader shared-storage access to the app UID. Codex approval choices do not change Android permissions. Native Preview executes trusted project code with the app's permissions and is outside Terminal's file boundary; review its consent prompt.
 
 ## Bug reports
 

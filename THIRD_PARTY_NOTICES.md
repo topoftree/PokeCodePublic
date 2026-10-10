@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.7.9.9.1**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-06**.
+Release: **0.1.8.1.3**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-10**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -13,6 +13,46 @@ The original review covers 15 distinct external production dependency declaratio
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes in v0.1.8.1.3 (since public v0.1.7.9.9.2)
+
+The only added external production dependency declaration is
+`com.caverock:androidsvg-aar:1.4`, under Apache-2.0, used to render plugin SVG
+icons. Its AAR matches the publisher download, and the publisher POM, release
+license and source headers were reviewed. Copyright, Apache Batik attribution,
+artifact hashes and the full upstream license are preserved in the
+[AndroidSVG notices](third_party_licenses/androidsvg/README.md).
+No existing external production dependency declaration was upgraded or replaced.
+
+Comparison with the actual public v0.1.7.9.9.2 APK confirms all **76 existing
+dependency version markers**, all **12 existing ARM64 libraries**, and all
+**398 existing license/notice, runtime repository, bootstrap and third-party
+source-archive assets** retain their bytes. AndroidSVG has no packaged version
+marker, so these markers alone are not used as the dependency inventory.
+
+The added `phone-storage` module replaces Pokecode's separate helper installer.
+It is Pokecode integration code using existing AndroidX/coroutines libraries.
+Its `libpokecode_storage.so` uses JNI and Android system libc for file operations;
+no new third-party native implementation is bundled. Existing GPL/LGPL runtime
+binaries and package payloads are unchanged. The Linux userspace API exception
+already recorded below remains applicable.
+
+Pokecode modified the Apache-2.0 terminal-emulator's output/exit delivery so
+background completion does not depend on display frames; the new output pump
+is integration code. Existing module attribution and license texts are retained.
+The standalone notification `mic` / `mic_off` vectors derive from Google Material
+Design Icons (Apache-2.0); other controls reuse the existing icon collection or
+Pokecode artwork. The AI sparkle vector, Voice orb portrait and new switcher
+screenshot are Pokecode/owner-supplied material. No new font, scene image pack,
+audio recording or model weight is bundled. Plugin catalog logos are fetched
+from their providers at runtime and retain their respective rights.
+
+No newly introduced or changed GPL, AGPL, LGPL or other potentially conflicting
+third-party dependency was identified in this delta. The existing runtime
+source-delivery/integration, ReVanced AAPT2 license-scope and Google SDK
+obligations remain unresolved; this review does not establish overall licensing
+clearance. Existing license texts are unchanged; AndroidSVG attribution and
+its upstream license are added.
 
 ### Changes in v0.1.7.9.9.1 (since public 0.1.7.9.2)
 
@@ -367,6 +407,7 @@ Each coordinate specifies the exact resolved version. Copyright holders remain t
 | `androidx.webkit:webkit:1.16.0` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx/releases/webkit#1.16.0) | [notices](third_party_licenses/maven/androidx.webkit__webkit__1.16.0/) |
 | `androidx.window:window-core-android:1.5.0` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx/releases/window#1.5.0) | [notices](third_party_licenses/maven/androidx.window__window-core-android__1.5.0/) |
 | `androidx.window:window:1.5.0` | Apache-2.0 | [publisher](https://developer.android.com/jetpack/androidx/releases/window#1.5.0) | [notices](third_party_licenses/maven/androidx.window__window__1.5.0/) |
+| `com.caverock:androidsvg-aar:1.4` | Apache-2.0 | [publisher](https://github.com/BigBadaboom/androidsvg/tree/Release_1.4) | [license and copyright](third_party_licenses/androidsvg/README.md) |
 | `com.google.android.datatransport:transport-api:2.2.1` | Apache-2.0 | [publisher](https://dl.google.com/dl/android/maven2/com/google/android/datatransport/transport-api/2.2.1/transport-api-2.2.1.aar) | [Apache text](third_party_licenses/Apache-2.0.txt) |
 | `com.google.android.datatransport:transport-backend-cct:2.3.3` | Apache-2.0 | [publisher](https://dl.google.com/dl/android/maven2/com/google/android/datatransport/transport-backend-cct/2.3.3/transport-backend-cct-2.3.3.aar) | [Apache text](third_party_licenses/Apache-2.0.txt) |
 | `com.google.android.datatransport:transport-runtime:2.2.6` | Apache-2.0 | [publisher](https://dl.google.com/dl/android/maven2/com/google/android/datatransport/transport-runtime/2.2.6/transport-runtime-2.2.6.aar) | [Apache text](third_party_licenses/Apache-2.0.txt) |
@@ -499,7 +540,7 @@ These are package records, not an additive count of entirely independent upstrea
 | Pokecode icon1/icon2 and derived system/adaptive/monochrome icons | Owner confirmed original icon artwork was ChatGPT-generated on 2026-09-09; system variants derive from that artwork | Owner-provided artwork; not assigned a third-party open-source license. This records supplied provenance, not a trademark or third-party-right warranty. |
 | Twelve UFO animation frames | Owner-supplied numbered sequence imported for v0.1.6.5.3, with cropping, transparency and scaling | Replaces the earlier six-frame artwork. No third-party open-source license is assigned; the older six-image ChatGPT confirmation is not treated as independent verification of this replacement sequence. |
 | Terminal desk and space-cabin scenes | Approved generated portrait/landscape artwork based on owner references, with independently authored animated vector limbs and stars | Pokecode artwork; no third-party open-source license is assigned. No external font, audio or asset pack is embedded. The Rive runtime retains its separate licenses above. |
-| Compose Material icons and standalone session vector | 1.7.8 release artifacts; Google Material Design Icons `forum` (outlined), adapted for the Block session button | Apache-2.0; original component notices and full license text retained above. |
+| Compose Material icons and standalone vectors | 1.7.8 release artifacts; Google Material Design Icons `forum` (outlined), adapted for the Block session button, and [`mic`](https://github.com/google/material-design-icons/blob/master/src/av/mic/materialicons/24px.svg) / [`mic_off`](https://github.com/google/material-design-icons/blob/master/src/av/mic_off/materialicons/24px.svg) for Voice notifications | Apache-2.0; original component notices and full license text retained above. |
 | OpenAI and GitHub brand vectors | Simple Icons 14.15.0; converted to Android vectors | CC0-1.0; [provenance and full text](third_party_licenses/simple-icons/README.md). Trademark rights are separate. |
 | Codex brand vector | Lobe Icons commit `82e641b4fece9d1028a127149af9ded00df5ac0c`; converted to an Android vector with expanded SVG arc parameters | MIT; [provenance and full text](third_party_licenses/lobe-icons/README.md). Trademark rights are separate. |
 | Release action GitHub/tag PNG | Owner-supplied transparent artwork, added in v0.1.7.9.9.1 and tinted by the application | No third-party open-source license assigned; supplied provenance does not establish trademark or third-party-right clearance. |
