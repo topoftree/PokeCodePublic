@@ -8,6 +8,12 @@
 
 Pokecode is an Android phone workspace for vibecoding with AI agents such as Codex. Organize notes and projects, prepare structured prompts, and build and iterate through Chat and an embedded terminal, with your development environment running locally on your phone.
 
+## Download
+
+Visit [Pokecode Releases](https://github.com/topoftree/PokeCodePublic/releases) for official APKs, release notes, SHA-256 checksums, and accompanying third-party materials.
+
+The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) lists published APKs. Review the known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
+
 ## Overview
 
 Keep written material in Notes, organize it into Blocks and Subblocks, and group work into Projects. Use Launcher and Time Capsule to manage submissions and revisit their saved history. Chat and Terminal bring command-line workflows into the same workspace.
@@ -109,12 +115,6 @@ Screenshots supplied by the author. Tap an image to view it at full size. Some s
     <td align="center" colspan="2"><strong>15. Live Chat / Terminal switcher</strong><br><a href="screenshots/15-live-page-switcher.jpg"><img src="screenshots/15-live-page-switcher.jpg" width="260" alt="Pokecode 0.1.8.1.3 Chat with compact live Chat and Terminal previews in the pull-up page switcher"></a><br>Pull up to switch pages while keeping the live preview menu open.</td>
   </tr>
 </table>
-
-## Download
-
-Visit [Pokecode Releases](https://github.com/topoftree/PokeCodePublic/releases) for official APKs, release notes, SHA-256 checksums, and accompanying third-party materials.
-
-The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) lists published APKs. Review the known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
 
 ## Current version
 
