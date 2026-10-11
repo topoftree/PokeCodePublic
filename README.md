@@ -118,9 +118,11 @@ Screenshots supplied by the author. Tap an image to view it at full size. Some s
 
 ## Current version
 
-The current version is **Pokecode 0.1.8.1.3** (Android version code **406**). Download the signed APK and checksum from its [GitHub Release](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.8.1.3). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available downloads.
+The current version is **Pokecode 0.1.8.1.4** (Android version code **407**). Download the signed APK and checksum from its [GitHub Release](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.8.1.4). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available downloads.
 
-Since public 0.1.7.9.9.2, Chat and Terminal share a draggable switcher with proportional live previews. Chat adds conversation Archive, Skills/Plugins management, app-management tools and more queue controls. Notes add AI refinement, batch Subblock actions and improved attachment connections.
+Version 0.1.8.1.4 fixes Note navigation with selected Subblocks: system Back or the Note's top-left back arrow clears the selection across all Blocks and keeps the Note open. Cancelling a predictive-back gesture preserves the selection; system Back still dismisses the keyboard first when visible. No third-party dependencies or assets changed from 0.1.8.1.3; the existing notices continue to apply.
+
+Version 0.1.8.1.3 introduced a draggable Chat/Terminal switcher with proportional live previews. Chat adds conversation Archive, Skills/Plugins management, app-management tools and more queue controls. Notes add AI refinement, batch Subblock actions and improved attachment connections.
 
 Phone file access is built in, Preview supports more project targets and full Android application builds, and Voice Mode uses native call notifications with a gentler draggable orb. Chat controls share translucent glass styling.
 
