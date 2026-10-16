@@ -34,11 +34,11 @@ Send a Block individually, or link several Blocks into a versioned group. Blocks
 - Time Capsule for browsing saved submission snapshots, resending groups, and keeping generated APK/HTML outputs. Task summaries start collapsed and retain timing, activity and code-change totals; history reports export as PDF, text or Word. Codex token statistics are in **Settings → Usage**, with Project, session, model and reasoning filters.
 - Trash with restoration of deleted Notes and Blocks.
 - Export Notes as Word documents (`.docx`), UTF-8 text, or PDF.
-- Chat sessions with clickable web/file links, final-deliverable attachments, a pen/eraser sketch editor, streamed responses, task activity, reordered queued messages, per-conversation Full auto, and persistent Codex follow-up dialogs whose accepted answers appear in Chat. Archive conversations and manage installed Codex Skills and Plugins, including plugin browsing.
+- Chat sessions with clickable web/file links, final-deliverable attachments, a pen/eraser sketch editor, streamed responses, task activity, reordered queued messages, per-conversation Full auto, and persistent Codex follow-up dialogs whose accepted answers appear in Chat. **Skip** dismisses pending follow-up questions and lets queued messages continue. Archive conversations and manage installed Codex Skills and Plugins, including plugin browsing.
 - Independent Chat conversations and sessions, Project branch workspaces, explicit GitHub Sync and local Merge. Cloud uses the official Codex CLI and a connected repository environment.
 - Chat Voice Mode with live subtitles, voice choices and cached greeting previews, audio-output selection, reconnection and background notification controls. One call can coordinate multiple Local Sessions; recent microphone recordings stay in app-private history.
 - An embedded terminal with light and dark palettes, resumable initialization, and Codex/GitHub sign-in. Two animated desk/space-cabin scenes show the live session; swipe four fingers left or right to switch scenes, or tap the laptop screen to expand Terminal.
-- Terminal settings for runtime updates, shared Android SDK setup, JDK/Gradle Wrapper health checks, dependency repair, optional-plugin update warnings, and global Bun package updates that preserve Project dependencies. **Version** displays cached installed-tool versions. Optional weekly updates start when the app is open, without background auto-start; an update already running can finish after leaving the app.
+- Terminal settings for runtime and Ubuntu release updates, shared Android SDK setup, JDK/Gradle Wrapper maintenance, dependency repair, optional-plugin update warnings, and global Bun package updates that preserve Project dependencies. **Version** checks for available stable updates beside installed-tool versions. Update can upgrade existing projects' Gradle Wrappers after a successful build of a temporary copy. Optional weekly updates start when the app is open, without background auto-start; an update already running can finish after leaving the app.
 - Game project mode with optional Godot installation, matching Android export templates, and shared setup state across Initialization and Project settings.
 - Built-in phone file-access modes and Android permission controls, plus a Terminal wake-lock control for work with the screen off. A separate Storage Helper installation is no longer required.
 - Background backup and restore with progress notifications and cancellation controls.
@@ -118,7 +118,11 @@ Screenshots supplied by the author. Tap an image to view it at full size. Some s
 
 ## Current version
 
-The current version is **Pokecode 0.1.8.1.4** (Android version code **407**). Download the signed APK and checksum from its [GitHub Release](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.8.1.4). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available downloads.
+The current version is **Pokecode 0.1.8.1.15** (Android version code **418**). Download the signed APK and checksum from its [GitHub Release](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.8.1.15). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available downloads.
+
+Since public 0.1.8.1.4, initialization resolves tools from current stable channels, Version shows available updates, and Update reports installed versions after each step. Ubuntu release upgrades retain recovery data and can finish pending packages after the system already reports the target version. Termux/Codex update fixes, PRoot **5.1.107.96+pokecode1**, tested project Wrapper upgrades, follow-up **Skip**, and the Terminal wake-lock default are included.
+
+Update now waits for its background version checks to stop and, after **Close Codex and continue**, closes Pokecode's detached Codex backends as well as active sessions. This addresses the repeated session-close error during package maintenance. A complete Ubuntu upgrade on an Android device remains unverified; see the release notes and [third-party changes](THIRD_PARTY_NOTICES.md#changes-in-v018115-since-public-v01814).
 
 Version 0.1.8.1.4 fixes Note navigation with selected Subblocks: system Back or the Note's top-left back arrow clears the selection across all Blocks and keeps the Note open. Cancelling a predictive-back gesture preserves the selection; system Back still dismisses the keyboard first when visible. No third-party dependencies or assets changed from 0.1.8.1.3; the existing notices continue to apply.
 
@@ -142,7 +146,7 @@ The application ID remains `com.pokecode`. Users of v0.1.6.4 can install this si
 4. If Android requests it, allow that browser or file manager to install unknown apps, then return to the installer.
 5. Install and open Pokecode. You can turn off that installation permission afterward.
 
-For a fresh environment, open Chat and select **Start initialization**, then follow setup and finish with **Sign in**, **Device code**, or **API key**. Setup requires internet access. AI services may also require an account and internet access even though the development environment runs locally on your phone.
+For a fresh environment, open Chat and select **Start initialization**, then follow setup and finish with **Sign in**, **Device code**, or **API key**. Setup resolves Ubuntu and tools from their current stable release channels and configured package repositories and requires internet access. AI services may also require an account and internet access even though the development environment runs locally on your phone.
 
 Select the optional **Game mode** checkbox during Initialization to install Godot and Android export tooling, or choose **Game** later in New Project or Project Settings to use the shared installer.
 
@@ -150,7 +154,7 @@ Installation screens vary by manufacturer. If Android refuses the installation, 
 
 ## Wake lock: work with the screen off
 
-Pokecode's wake lock helps Terminal commands, builds and Codex tasks keep running while the phone's screen is off. In **Terminal**, a highlighted closed **lock icon** means it is enabled; tap the icon to toggle it. Starting a Terminal session enables it automatically. The screen can still turn off normally.
+Pokecode's wake lock helps Terminal commands, builds and Codex tasks keep running while the phone's screen is off. In **Terminal**, a highlighted closed **lock icon** means it is enabled; tap the icon to toggle it. Opening a running Terminal enables it by default, including an unsaved Chat shell; a manual on/off choice is remembered. The screen can still turn off normally.
 
 The wake lock has **no app-imposed time limit**. It remains held until you disable it, shut down Terminal, or its owning service stops. Release it when work finishes to save battery. Android's [battery and background restrictions](https://developer.android.com/training/monitoring-device-state/doze-standby) can still limit processing or network access.
 
@@ -184,6 +188,10 @@ Internet access is needed for external services and runtime downloads. Some feat
 Restore replaces the selected categories in the new app. It does not automatically read or delete the old installation's private data. End-to-end migration on a device remains a manual validation item.
 
 For updates from v0.1.6.4 or later with the same `com.pokecode` application ID, download the newer APK, verify its checksum, and install it over the existing app. Updates must have a compatible signing certificate; Android rejects updates signed with an unrelated key.
+
+After installing, reopen Pokecode and run **Settings → Terminal → Update** for runtime maintenance. Confirm **Close Codex and continue** when prompted. Keep existing app data, projects and the Ubuntu container so interrupted upgrades can resume. Ubuntu's version label can change before all packages finish; Update verifies package health before completing the release task. If a step fails, open its Terminal diagnostics and use **Retry failed step** after resolving the reported problem. Version shows saved results during maintenance, including a failed step.
+
+Project Wrapper maintenance builds a temporary project copy before changing its four Wrapper files. Failed builds, custom distributions, pending Wrapper edits or concurrent changes retain the project's current Wrapper and show a warning. Project source and AGP/Kotlin plugin versions are preserved; successful Wrapper changes appear in Git. Backups and recovery journals are kept under Ubuntu's `~/.local/share/pokecode/gradle-runtime/project-wrapper-backups/`.
 
 Export important Notes before updating. Avoid uninstalling to work around a signature error: uninstalling can remove application data. Report the error and the versions involved instead.
 

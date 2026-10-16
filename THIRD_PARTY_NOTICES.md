@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.8.1.3**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-10**.
+Release: **0.1.8.1.15**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-16**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -13,6 +13,58 @@ The original review covers 15 distinct external production dependency declaratio
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes in v0.1.8.1.15 (since public v0.1.8.1.4)
+
+The APK replaces PRoot **5.1.107.89** and its loader with
+**5.1.107.96+pokecode1**, based on upstream tag
+[`v5.1.107.96`](https://github.com/termux/proot/tree/v5.1.107.96)
+(commit `a179d3e8a4e045aaa1fb8cc3284f23509d96d353`). PRoot source headers
+grant **GPL-2.0-or-later**; the Termux package recipe labels it GPL-2.0.
+The original attribution and [GPL text](third_party_licenses/GPL-2.0.txt)
+remain applicable. The local path-alias patch compares device/inode identity
+when Android paths refer to the same backing file, addressing Ubuntu coreutils
+execution failures. The build recipe also records the Android/private-path,
+loader, header and 16 KiB alignment adjustments.
+
+The following materials are included inside the APK, which can be opened as a
+ZIP, without access to Pokecode's private application repository:
+
+- `assets/sources/proot-v5.1.107.96.zip`: unchanged upstream archive, SHA-256
+  `75f654fe60dea92dabff2bf083ae8bfe4f91baa6a1a374786a6bf391015eebaa`.
+- `assets/sources/patches/proot-l2s-path-alias.patch`: local patch, SHA-256
+  `20cb2c8b065feca530616546769ada9985614b9dec3b6cc7cc7d295f80e55137`.
+- `assets/sources/recipes/pokecode-proot-build.py` and `proot-build.sh`:
+  the rebuild script and updated Termux recipe, alongside existing talloc and
+  shared-memory source archives/recipes. The rebuild uses Android NDK r30
+  **30.0.16248370**, API 33, ARM64, and the APK's existing shared libraries.
+- `assets/SOURCE_PROVENANCE.md` and existing license files: component origins,
+  build details and the retained upstream notices.
+
+Current PRoot binary SHA-256 is
+`87e815b573bb752d408d285a82d78ebff24b7d85ed3bf77a3044fdf52311c577`;
+the matching loader is
+`5abbee45cc8eb70d7a89b69a680af5dec775d2b945cb2296d6e5bd6de087e2e0`.
+Comparison with the actual public v0.1.8.1.4 APK confirms these are the only
+changed binaries among **13 ARM64 libraries**. The dynamically linked talloc
+and libandroid-shmem libraries retain their bytes. Their existing LGPL and
+other obligations continue to apply.
+
+External Android dependency declarations and all **76 packaged dependency
+version markers** are unchanged. No new font, icon collection, artwork, audio
+asset or third-party Android library is bundled. Python and PRoot-Distro's
+package revisions change from `+claudenote1` to `+pokecode1`, with Pokecode
+maintainer metadata; all **923 Python** and **83 PRoot-Distro** package payload
+files retain their bytes. Existing license texts are unchanged. The new
+initialization, update, version-check and project Wrapper helpers are Pokecode
+integration code. Tools obtained during setup/update remain subject to their
+own upstream licenses; they are not all bundled in this APK.
+
+This delta includes a changed GPL component. The included source, patches and
+recipes do not establish that all corresponding-source, license-election,
+program-boundary, LGPL replacement or installation-information requirements
+have been fulfilled. Those issues and the existing AAPT2/Google SDK obligations
+remain unresolved; publication is not a finding of licensing clearance.
 
 ### Changes in v0.1.8.1.3 (since public v0.1.7.9.9.2)
 
@@ -512,7 +564,7 @@ These are package records, not an additive count of entirely independent upstrea
 | ncurses | 6.6.20260307+really6.5.20250830 | MIT-style ncurses license; separate terminal data grants | Thomas E. Dickey, FSF and contributors | [source](https://invisible-island.net/ncurses/) [notices](third_party_licenses/runtime/ncurses/). Additional rxvt-unicode, kitty, alacritty and foot terminal descriptions are listed below. |
 | openssl | 1:3.6.3 | Apache-2.0; associated third-party notices | The OpenSSL Project Authors and contributors | [source](https://www.openssl.org/) [notices](third_party_licenses/runtime/openssl/). Preserve LICENSE.txt and incorporated notices; this is OpenSSL 3, not the old OpenSSL license. |
 | pcre2 | 10.47 | BSD-3-Clause WITH PCRE2-exception; BSD-2-Clause SLJIT | Philip Hazel, University of Cambridge, Zoltan Herczeg and contributors | [source](https://pcre2project.github.io/pcre2/) [notices](third_party_licenses/runtime/pcre2/). Preserve LICENCE.md plus deps/sljit/LICENSE for the JIT code. |
-| proot | 5.1.107.89 | GPL-2.0-or-later | STMicroelectronics and contributors | [source](https://proot-me.github.io/) [notices](third_party_licenses/runtime/proot/). Executed as a separate program; linked to LGPLv3 talloc. Compatible license election, complete source, and program-boundary review remain required. |
+| proot | 5.1.107.96+pokecode1 | GPL-2.0-or-later | STMicroelectronics and contributors | [source](https://github.com/termux/proot/tree/v5.1.107.96) [notices](third_party_licenses/runtime/proot/). Executed as a separate program; linked to LGPLv3 talloc. Updated source, patch and rebuild scripts are inside the APK as detailed above. Compatible license election, complete source, and program-boundary review remain required. |
 | readline | 8.3.3 | GPL-3.0-or-later | Free Software Foundation and contributors | [source](https://tiswww.case.edu/php/chet/readline/rltop.html) [notices](third_party_licenses/runtime/readline/). Provide Readline 8.3 and patches 001–003; Python also links this component. |
 | sed | 4.9-2 | GPL-3.0-or-later | Free Software Foundation and contributors | [source](https://www.gnu.org/software/sed/) [notices](third_party_licenses/runtime/sed/). Source, notices and modifications required. |
 | tar | 1.35-3 | GPL-3.0-or-later | Free Software Foundation and contributors | [source](https://www.gnu.org/software/tar/) [notices](third_party_licenses/runtime/tar/). Source, notices and modifications required. |
@@ -526,8 +578,8 @@ These are package records, not an additive count of entirely independent upstrea
 | xz-utils | 5.8.3 | 0BSD tools; GPL-2.0-or-later helper scripts; conditional LGPL-2.1-or-later getopt | The XZ Utils authors and contributors | [source](https://tukaani.org/xz/). xzgrep/xzdiff/xzless/xzmore have their own GPL grant. Keep source and COPYING; check the compiled getopt configuration. |
 | zlib | 1.3.2 | Zlib | Jean-loup Gailly and Mark Adler | [source](https://www.zlib.net/) [notices](third_party_licenses/runtime/zlib/). Preserve the original notice; modified versions must be identified and origin not misrepresented. |
 | zstd | 1.5.7-1 | BSD-3-Clause OR GPL-2.0-only; BSD-2-Clause zstdgrep | Meta Platforms, Yann Collet, Thomas Klausner and contributors | [source](https://github.com/facebook/zstd) [notices](third_party_licenses/runtime/zstd/). Preserve the dual grant and zstdgrep's separate notice. zstdless has no separate GPL header. |
-| python | 3.13.13-1+claudenote1 | PSF-2.0 with historical and bundled-component notices; linked GPL libraries | Python Software Foundation and named licensors | [source](https://python.org/) [notices](third_party_licenses/runtime/python/). Keep LICENSE and Doc/license.rst, exact Python 3.13.13 Termux revision 1 sources/patches. Readline and gdbm linking needs combined-runtime review. |
-| proot-distro | 5.3.0+claudenote1 | GPLv3; metadata GPL-3.0-only vs source GPL-3.0-or-later | Termux PRoot-Distro contributors | [source](https://github.com/termux/proot-distro) [notices](third_party_licenses/runtime/proot-distro/). The upstream Python client is distributed and modified. Preserve original grants, supply modifications, and resolve metadata discrepancy. |
+| python | 3.13.13-1+pokecode1 | PSF-2.0 with historical and bundled-component notices; linked GPL libraries | Python Software Foundation and named licensors | [source](https://python.org/) [notices](third_party_licenses/runtime/python/). Keep LICENSE and Doc/license.rst, exact Python 3.13.13 Termux revision 1 sources/patches. Readline and gdbm linking needs combined-runtime review. |
+| proot-distro | 5.3.0+pokecode1 | GPLv3; metadata GPL-3.0-only vs source GPL-3.0-or-later | Termux PRoot-Distro contributors | [source](https://github.com/termux/proot-distro) [notices](third_party_licenses/runtime/proot-distro/). The upstream Python client is distributed and modified. Preserve original grants, supply modifications, and resolve metadata discrepancy. |
 | gdbm | 1.26-1 | GPL-3.0-or-later | Free Software Foundation and contributors | [source](https://www.gnu.org.ua/software/gdbm/) [notices](third_party_licenses/runtime/gdbm/). Bundled with Python although absent as a separate dpkg package; source and linking review required. |
 | libexpat | 2.8.1 | MIT | James Clark, Expat maintainers and contributors | [source](https://libexpat.github.io/) [notices](third_party_licenses/runtime/libexpat/). Version 2.8.1 bundled with Python; retain exact COPYING. |
 | libffi | 3.5.2 | MIT | Anthony Green, Red Hat and contributors | [source](https://sourceware.org/libffi/) [notices](third_party_licenses/runtime/libffi/). Version 3.5.2 bundled with Python; retain exact LICENSE. |
