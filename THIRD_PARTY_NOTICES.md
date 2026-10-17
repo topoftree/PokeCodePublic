@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.8.1.15**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-16**.
+Release: **0.1.8.1.18**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-17**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -13,6 +13,32 @@ The original review covers 15 distinct external production dependency declaratio
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes in v0.1.8.1.18 (since public v0.1.8.1.15)
+
+Production dependency declarations retain their versions. Comparison with the
+actual public 0.1.8.1.15 APK confirms all **76 dependency version markers**, all
+**13 ARM64 native libraries** and all **443 assets excluding generated runtime
+profiles** retain their bytes. This includes the bootstrap, embedded package
+repository, runtime helpers, AAPT2, upstream source archives and existing license
+texts. No new third-party font, artwork, audio recording or icon dependency is
+bundled. The hang-up cue uses Android's tone generator; controls reuse the
+existing Material icons.
+
+Pokecode modified the copied **Apache-2.0 terminal-emulator** `TerminalRow`,
+`TerminalBuffer` and `TextStyle` code on **2026-10-17**. Uniform terminal rows
+share one style value, live mixed-style arrays are reused, and cached screen-text
+projections are released when rows enter scrollback. History capacity, Unicode
+text and per-cell styles are retained. These modules fall under the upstream
+[terminal-emulator exception](third_party_licenses/runtime/terminal-emulator/LICENSE.md);
+the [Apache-2.0 text](third_party_licenses/Apache-2.0.txt) and existing attribution
+remain applicable. This does not relicense the complete Termux application.
+
+The other changes are Pokecode Chat, Note, attachment and preview integration
+code. No newly introduced or changed GPL, AGPL, LGPL or other potentially
+conflicting third-party dependency was identified in this delta. Previously
+documented corresponding-source/integration, LGPL replacement, AAPT2 and Google
+SDK obligations remain unresolved. Existing license text files are preserved.
 
 ### Changes in v0.1.8.1.15 (since public v0.1.8.1.4)
 
