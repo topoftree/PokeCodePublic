@@ -1,8 +1,6 @@
-
-
-
-
-
+<p align="center">
+  <img src="assets/pokecode-icon.png" width="240" alt="Pokecode app icon">
+</p>
 
 # Pokecode
 
