@@ -12,6 +12,40 @@ Visit [Pokecode Releases](https://github.com/topoftree/PokeCodePublic/releases) 
 
 The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) lists published APKs. Review the known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
 
+## Independent storage test build
+
+[**Pokecode 0.1.8.1.21**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.8.1.21)
+(version code **425**) installs as **PokeCode Test**, application ID **`com.poketest`**.
+It can coexist with the production `com.pokecode` app and does not replace it.
+
+In the production app, save your Notes and create a backup. In PokeCode Test, use
+**Settings → Restore**, select the backup and categories, and let the automatic
+conversion finish. The existing progress dialog supports cancellation before
+commit and running in the background. Conversion verifies the original archive,
+rebases attachment/runtime paths and validates staged data before installing it.
+Restore replaces the selected categories in the test app; the production app and
+original backup remain untouched. Keep them while evaluating the test build.
+
+The new storage format losslessly compresses large Note/Prompt/history text,
+Chat history, conversation/attachment indexes and editor recovery files. Identical
+historical attachments within a Block share stored bytes while editable working
+copies stay separate. Stable IDs, revisions, original media quality and message
+contents are retained. New test backups require a compatible test-app reader;
+they cannot be restored into the older production app. Older backups cannot
+supply unsaved recovery drafts they did not contain.
+
+This build also includes the recent Note/Codex memory improvements, floating
+scrollable queued prompts with animated reordering, activity icons during context
+compaction and network retries, the smaller Terminal switcher, and scrolling
+Files/Archive drawer shortcuts. Individual Subblock copying omits its number;
+Move to Project uses theme-appropriate text contrast. Automatic Note organization
+and Project assignment respect the task's origin and existing assignment.
+
+Device backup restoration, Terminal launch and extended Note editing still need
+validation; this is a **pre-release**, separate from the stable release below.
+See the release notes for build checks and the [third-party notices](THIRD_PARTY_NOTICES.md)
+for runtime packaging changes and existing obligations.
+
 ## Overview
 
 Keep written material in Notes, organize it into Blocks and Subblocks, and group work into Projects. Use Launcher and Time Capsule to manage submissions and revisit their saved history. Chat and Terminal bring command-line workflows into the same workspace.
@@ -116,7 +150,7 @@ Screenshots supplied by the author. Tap an image to view it at full size. Some s
 
 ## Current version
 
-The current version is **Pokecode 0.1.8.1.18** (Android version code **422**). Download the signed APK and checksum from its [GitHub Release](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.8.1.18). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available downloads.
+The current stable version is **Pokecode 0.1.8.1.18** (Android version code **422**). Download the signed APK and checksum from its [GitHub Release](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.8.1.18). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available downloads.
 
 Since public 0.1.8.1.15, tap Chat's Project/conversation name to see remaining weekly quota, reset time and context. The compact popup refreshes when idle, retains its cooldown, and uses readable theme colors without a Status heading or refresh button. Header options, Move to Project and shorter message actions use frosted glass. Pictures and files bound to newly sent Local Prompts remain attached to their matching Chat bubbles, including after reopening history.
 

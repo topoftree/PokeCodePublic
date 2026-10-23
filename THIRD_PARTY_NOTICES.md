@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.8.1.18**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-17**.
+Release: **0.1.8.1.21 (test build)**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-23**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -13,6 +13,31 @@ The original review covers 15 distinct external production dependency declaratio
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes in v0.1.8.1.21 (since public v0.1.8.1.18)
+
+Production dependency versions and the upstream runtime package versions are
+unchanged. No new third-party font, artwork, audio asset, native implementation
+or external compression library was added; storage compression uses the existing
+Android/Java platform APIs. The other functional changes are Pokecode integration
+and UI code.
+
+The independent test package uses `com.poketest`. Existing native installation
+paths in the Termux bootstrap, Python/PRoot-Distro packages, PRoot executable and
+libandroid-shmem were relocated from `com.pokecode`. Both IDs have the same byte
+length, preserving ELF offsets and alignment. Package ownership lists, checksums
+and the included PRoot build recipe/provenance were updated. This changes packaging
+bytes of existing GPL/LGPL and other runtime components, without upgrading their
+upstream versions or changing their licenses. Source archives, patches and license
+texts remain at the existing versions.
+
+Previously documented corresponding-source, copyleft integration, LGPL replacement,
+AAPT2 and Google SDK obligations remain unresolved. Package relocation does not
+resolve those issues or establish that the whole distribution is compliant.
+The existing license text files are retained. Final APK comparison against the
+previous public asset confirms **76 unchanged dependency version markers**,
+**13 ARM64 libraries** (11 byte-identical, two differing only in equal-length
+installation paths), **63 bootstrap package records**, and no newly added assets.
 
 ### Changes in v0.1.8.1.18 (since public v0.1.8.1.15)
 
