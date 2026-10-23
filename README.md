@@ -10,13 +10,17 @@ Pokecode is an Android phone workspace for vibecoding with AI agents such as Cod
 
 Visit [Pokecode Releases](https://github.com/topoftree/PokeCodePublic/releases) for official APKs, release notes, SHA-256 checksums, and accompanying third-party materials.
 
-The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) lists published APKs. Review the known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain this documentation repository, not the application or its complete third-party corresponding source.
+The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) lists published APKs. Review the known limitations and outstanding licensing issues before use. GitHub's automatically generated source-code archives contain only this distribution repository's files, not the private application source or its complete third-party corresponding source.
 
 ## Independent storage test build
 
 [**Pokecode 0.1.8.1.21**](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.8.1.21)
 (version code **425**) installs as **PokeCode Test**, application ID **`com.poketest`**.
 It can coexist with the production `com.pokecode` app and does not replace it.
+[Download the signed test APK](https://github.com/topoftree/PokeCodePublic/raw/refs/tags/v0.1.8.1.21/releases/v0.1.8.1.21/Pokecode-v0.1.8.1.21.apk)
+· [SHA-256](releases/v0.1.8.1.21/SHA256SUMS.txt).
+This test binary is stored in the distribution repository and linked from its
+Release because the current connection cannot upload Release attachments.
 
 In the production app, save your Notes and create a backup. In PokeCode Test, use
 **Settings → Restore**, select the backup and categories, and let the automatic
