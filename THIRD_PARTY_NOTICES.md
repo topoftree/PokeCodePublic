@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Release: **0.1.8.1.21 (test build)**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-23**.
+Current public release: **0.1.8.1.18**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-23**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -15,6 +15,9 @@ In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
 
 ### Changes in v0.1.8.1.21 (since public v0.1.8.1.18)
+
+The 0.1.8.1.21 test pre-release was withdrawn on **2026-10-23**. This review is
+retained for the previously distributed binary; it is not a current download.
 
 Production dependency versions and the upstream runtime package versions are
 unchanged. No new third-party font, artwork, audio asset, native implementation
