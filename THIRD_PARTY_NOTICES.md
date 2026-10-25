@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Current public release: **0.1.8.1.18**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-23**.
+Current public release: **0.1.8.1.44**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-25**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -13,6 +13,41 @@ The original review covers 15 distinct external production dependency declaratio
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes in v0.1.8.1.44 (since public v0.1.8.1.18)
+
+Production dependency versions are unchanged. Comparison with the actual public
+0.1.8.1.18 APK confirms all **76 dependency version markers**, all **13 ARM64
+native libraries**, the complete Termux bootstrap, upstream source archives,
+Gradle Wrapper JAR, AAPT2, and existing license texts retain their bytes. No new
+font, image pack, audio asset or external native implementation is bundled.
+
+The private Python and PRoot-Distro Debian archives were repacked from Zstandard
+to XZ during the intermediate application-ID relocation and return to
+`com.pokecode`. Their extracted control and data entries match the previous
+public packages: **112 PRoot-Distro entries**, **1,005 Python entries**, and two
+control entries per package, with identical contents, modes, ownership and link
+targets. Archive encoding/timestamps and repository checksums changed; the
+covered programs, upstream versions and licenses did not. The bootstrap checksum
+file now omits its filename suffix while retaining the same digest.
+
+The copied **Apache-2.0 terminal-emulator** `TerminalSession` code now releases
+consumed restore text and identifies display-only sessions. Its existing
+[terminal-emulator exception](third_party_licenses/runtime/terminal-emulator/LICENSE.md),
+attribution and [Apache-2.0 license](third_party_licenses/Apache-2.0.txt) remain
+applicable. This does not relicense the complete Termux application.
+
+Preset adds a standalone filled bookmark vector matching the Google Material
+Design bookmark shape; Skills uses the existing Material Construction icon.
+These controls are covered by the existing Apache-2.0 icon notices. The remaining
+changes are Pokecode integration/UI code and configuration, including managed
+Gradle Wrapper download retries; the Wrapper JAR itself is unchanged.
+
+No newly introduced or changed GPL, AGPL, LGPL or other potentially conflicting
+third-party code was identified in this delta. Existing corresponding-source,
+copyleft integration, LGPL replacement, AAPT2 and Google SDK obligations remain
+unresolved; this review does not establish overall licensing clearance. Existing
+license text files are retained.
 
 ### Changes in v0.1.8.1.21 (since public v0.1.8.1.18)
 
@@ -646,7 +681,7 @@ These are package records, not an additive count of entirely independent upstrea
 | Pokecode icon1/icon2 and derived system/adaptive/monochrome icons | Owner confirmed original icon artwork was ChatGPT-generated on 2026-09-09; system variants derive from that artwork | Owner-provided artwork; not assigned a third-party open-source license. This records supplied provenance, not a trademark or third-party-right warranty. |
 | Twelve UFO animation frames | Owner-supplied numbered sequence imported for v0.1.6.5.3, with cropping, transparency and scaling | Replaces the earlier six-frame artwork. No third-party open-source license is assigned; the older six-image ChatGPT confirmation is not treated as independent verification of this replacement sequence. |
 | Terminal desk and space-cabin scenes | Approved generated portrait/landscape artwork based on owner references, with independently authored animated vector limbs and stars | Pokecode artwork; no third-party open-source license is assigned. No external font, audio or asset pack is embedded. The Rive runtime retains its separate licenses above. |
-| Compose Material icons and standalone vectors | 1.7.8 release artifacts; Google Material Design Icons `forum` (outlined), adapted for the Block session button, and [`mic`](https://github.com/google/material-design-icons/blob/master/src/av/mic/materialicons/24px.svg) / [`mic_off`](https://github.com/google/material-design-icons/blob/master/src/av/mic_off/materialicons/24px.svg) for Voice notifications | Apache-2.0; original component notices and full license text retained above. |
+| Compose Material icons and standalone vectors | 1.7.8 release artifacts; Google Material Design Icons `forum` (outlined), adapted for the Block session button, [`mic`](https://github.com/google/material-design-icons/blob/master/src/av/mic/materialicons/24px.svg) / [`mic_off`](https://github.com/google/material-design-icons/blob/master/src/av/mic_off/materialicons/24px.svg) for Voice notifications, and the filled bookmark shape used by Preset | Apache-2.0; original component notices and full license text retained above. |
 | OpenAI and GitHub brand vectors | Simple Icons 14.15.0; converted to Android vectors | CC0-1.0; [provenance and full text](third_party_licenses/simple-icons/README.md). Trademark rights are separate. |
 | Codex brand vector | Lobe Icons commit `82e641b4fece9d1028a127149af9ded00df5ac0c`; converted to an Android vector with expanded SVG arc parameters | MIT; [provenance and full text](third_party_licenses/lobe-icons/README.md). Trademark rights are separate. |
 | Release action GitHub/tag PNG | Owner-supplied transparent artwork, added in v0.1.7.9.9.1 and tinted by the application | No third-party open-source license assigned; supplied provenance does not establish trademark or third-party-right clearance. |

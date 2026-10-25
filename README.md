@@ -22,6 +22,8 @@ This is Pokecode's public distribution and documentation repository. APK downloa
 
 Use Notes as a working library for your prompts. Write instructions, split related tasks into Blocks and Subblocks, and organize them by Project. Reusable Custom Templates save common prompt instructions and version settings so you can apply them to future work.
 
+Open **Preset** on the second page of Chat's **+** menu to reuse Note prompts or saved Subblocks with their linked attachments. Long-press a Subblock to **Add to Preset** or **Remove from Preset**. Choosing a preset fills the draft without sending it automatically; removing it preserves the original Note content.
+
 Send a Block individually, or link several Blocks into a versioned group. Blocks without a linked version are sent without automatic Project or Preview instructions. Launcher lets you review pending groups before sending, while Time Capsule keeps snapshots of previous submissions so you can check exactly what was sent. Your working Notes and submission history stay accessible as you iterate with an AI agent.
 
 ## Main features
@@ -37,7 +39,7 @@ Send a Block individually, or link several Blocks into a versioned group. Blocks
 - Chat Voice Mode with live subtitles, voice choices and cached greeting previews, audio-output selection, reconnection and background notification controls. One call can coordinate multiple Local Sessions; recent microphone recordings stay in app-private history.
 - An embedded terminal with light and dark palettes, resumable initialization, and Codex/GitHub sign-in. Two animated desk/space-cabin scenes show the live session; swipe four fingers left or right to switch scenes, or tap the laptop screen to expand Terminal.
 - Terminal settings for runtime and Ubuntu release updates, shared Android SDK setup, JDK/Gradle Wrapper maintenance, dependency repair, optional-plugin update warnings, and global Bun package updates that preserve Project dependencies. **Version** checks for available stable updates beside installed-tool versions. Update can upgrade existing projects' Gradle Wrappers after a successful build of a temporary copy. Optional weekly updates start when the app is open, without background auto-start; an update already running can finish after leaving the app.
-- Game project mode with optional Godot installation, matching Android export templates, and shared setup state across Initialization and Project settings.
+- Optional **Game development kit** with Godot installation, matching Android export templates, and shared setup state across Initialization and Project settings.
 - Built-in phone file-access modes and Android permission controls, plus a Terminal wake-lock control for work with the screen off. A separate Storage Helper installation is no longer required.
 - Background backup and restore with progress notifications and cancellation controls.
 - Session-scoped Preview with HTML, framework Web apps, Android Layout, Compose, Kotlin View and Java View entries, retained rendering across navigation, white rendering/green completion dots, and error Details with Retry.
@@ -66,6 +68,8 @@ Connect attachments to individual Subblocks by holding and dragging their colore
 
 GitHub Projects support repository import or binding an existing checkout, separate branch workspaces, explicit bidirectional **Sync**, and local **Merge**. Automatic task commits stay local. On Sync, renaming an already-published branch uses GitHub's branch-rename operation; failures are reported without silently publishing a second branch.
 
+After a Notes-only restore, GitHub Project preparation can reconnect restored source files whose Git metadata was not backed up. **Retry** verifies the bound repository and branch, retains existing local files and restores missing remote files. Access to the repository is still required.
+
 Local Codex can use app-management tools to work with Notes and Projects and track Chat tasks in Time Capsule. Project suggestions appear as confirmation cards in Chat. These tools use the app's existing data and workflow controls.
 
 Pull upward from the Chat composer, or drag the white line above Terminal's bottom navigation, to reveal live **Chat / Terminal** page cards. Both previews retain their page proportions, and selecting a card keeps the menu open. Drag down or press Back to close it. Terminal is now reached through this switcher instead of a separate bottom-navigation tab.
@@ -73,6 +77,8 @@ Pull upward from the Chat composer, or drag the white line above Terminal's bott
 Swipe Chat's **+** actions to the second page for **Release**, which asks Codex to publish the currently bound branch. Literal `main` selects a regular release; other branches select a pre-release. This requires an idle, prepared Local GitHub binding and suitable repository permissions. Retry retains the intended release plan; success checks the remote tag, release type and intended uploads.
 
 With an empty Chat composer, tap **Voice Mode** to start Codex and a voice conversation. It is separate from microphone dictation: audio is sent to the Codex voice service through your signed-in account, and microphone permission is required. Swipe the orb down to minimize it and up to expand it. The full-screen controls include subtitles and a settings gear for voice and audio-output choices. Voice Mode continues across pages with a native ongoing-call notification, an orb portrait, elapsed time, **Mute / Unmute** and hang-up controls. Temporary connection failures retain the call controls and offer bounded reconnection; account and audio errors remain explicit.
+
+For microphone dictation, long-press the microphone to choose **Automatic** or a manual language. On supported Android 14+ on-device recognizers, Automatic requests Chinese, English and the primary system language, subject to service/model support. It uses a plain microphone icon and shows **Listening…** before speech; unsupported services explain how to choose a manual language. There is no cloud fallback for Automatic dictation.
 
 Choose among nine voices in **Settings → Voice Mode** or the in-call settings. Fixed greeting samples download over HTTPS and are cached for later offline auditions; they are not bundled in the APK. Voice switching and auditions pause live microphone/output and preserve the mute choice. **Voice record history** retains the latest 20 user microphone recordings in app-private storage for playback. One voice call can address multiple running Local Sessions without stopping tasks already submitted when the call closes. Account availability, connectivity, Android System WebView and Android background restrictions apply. The embedded Terminal's `/voice` command still has a separate audio-device path; use Chat's Voice Mode for Android microphone/speaker integration.
 
@@ -116,7 +122,11 @@ Screenshots supplied by the author. Tap an image to view it at full size. Some s
 
 ## Current version
 
-The current stable version is **Pokecode 0.1.8.1.18** (Android version code **422**). Download the signed APK and checksum from its [GitHub Release](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.8.1.18). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available downloads.
+The current stable version is **Pokecode 0.1.8.1.44** (Android version code **448**). Download the signed APK and checksum from its [GitHub Release](https://github.com/topoftree/PokeCodePublic/releases/tag/v0.1.8.1.44). The [Releases page](https://github.com/topoftree/PokeCodePublic/releases) is the authoritative record of available downloads.
+
+Since public 0.1.8.1.18, Chat adds reusable Note/Subblock Presets, automatic on-device dictation on supported services, and Codex 0.164+ inline settings compatibility. Startup uses a smoother icon-only transition. A new Codex message in the currently open Chat gives a gentle haptic while the app is resumed and focused; streamed text and restored history do not repeat it. Device touch-feedback settings are respected.
+
+Initialization and updates add bounded network retries, incomplete-Ubuntu recovery, compatible Java selection for Godot, and refreshed setup helpers after APK upgrades. GitHub Projects recover after Notes-only restores. Long-session, backup and restored-Terminal processing retains less memory, diagnostics distinguish historical crashes, and Preview hides archived/deleted conversation entries. Physical vibration, full initialization and device-level memory improvements remain manual checks. See the release notes and [third-party changes](THIRD_PARTY_NOTICES.md#changes-in-v018144-since-public-v018118).
 
 Since public 0.1.8.1.15, tap Chat's Project/conversation name to see remaining weekly quota, reset time and context. The compact popup refreshes when idle, retains its cooldown, and uses readable theme colors without a Status heading or refresh button. Header options, Move to Project and shorter message actions use frosted glass. Pictures and files bound to newly sent Local Prompts remain attached to their matching Chat bubbles, including after reopening history.
 
@@ -150,7 +160,7 @@ The application ID remains `com.pokecode`. Users of v0.1.6.4 can install this si
 
 For a fresh environment, open Chat and select **Start initialization**, then follow setup and finish with **Sign in**, **Device code**, or **API key**. Setup resolves Ubuntu and tools from their current stable release channels and configured package repositories and requires internet access. AI services may also require an account and internet access even though the development environment runs locally on your phone.
 
-Select the optional **Game mode** checkbox during Initialization to install Godot and Android export tooling, or choose **Game** later in New Project or Project Settings to use the shared installer.
+Select the optional **Game development kit** checkbox before starting Initialization to install Godot and Android export tooling. The selector disappears once setup begins. Choose **Game** later in New Project or Project Settings to use the shared installer.
 
 Installation screens vary by manufacturer. If Android refuses the installation, check your Android version and CPU architecture before reporting the error. Do not disable Android's security checks to force an incompatible installation.
 
