@@ -82,39 +82,44 @@ Choose among nine voices in **Settings → Voice Mode** or the in-call settings.
 
 ## Screenshots
 
-Screenshots supplied by the author. Tap an image to view it at full size. Some screenshots show earlier versions, so current controls may differ.
+Screenshots of Pokecode 0.1.8.1.58 supplied by the author. Tap an image to view it at full size.
 
 <table>
   <tr>
-    <td align="center"><strong>1. Chat</strong><br><a href="screenshots/01-chat.jpg"><img src="screenshots/01-chat.jpg" width="260" alt="Pokecode Chat showing a multiple-choice follow-up and Codex replies"></a></td>
-    <td align="center"><strong>2. Full-screen Terminal</strong><br><a href="screenshots/02-terminal.png"><img src="screenshots/02-terminal.png" width="260" alt="Pokecode embedded Terminal running Codex"></a></td>
+    <td align="center"><strong>1. Chat</strong><br><a href="screenshots/01-chat-start.png"><img src="screenshots/01-chat-start.png" width="260" alt="Pokecode Chat start screen with the outlined composer and bottom navigation"></a></td>
+    <td align="center"><strong>2. Notes</strong><br><a href="screenshots/02-notes.png"><img src="screenshots/02-notes.png" width="260" alt="Pokecode Notes list with Sort, full-width separators and the outlined New note button"></a></td>
   </tr>
   <tr>
-    <td align="center"><strong>3. Chat start</strong><br><a href="screenshots/03-chat-start.png"><img src="screenshots/03-chat-start.png" width="260" alt="Pokecode Chat start screen"></a></td>
-    <td align="center"><strong>4. Blocks and Subblocks</strong><br><a href="screenshots/04-note-blocks.png"><img src="screenshots/04-note-blocks.png" width="260" alt="Pokecode Note editor with a Block and three Subblocks"></a></td>
+    <td align="center"><strong>3. Blocks</strong><br><a href="screenshots/03-note-blocks.png"><img src="screenshots/03-note-blocks.png" width="260" alt="Pokecode Note editor showing collapsed outlined Blocks and their destination labels"></a></td>
+    <td align="center"><strong>4. Attachments and Subblocks</strong><br><a href="screenshots/04-attachment-links.png"><img src="screenshots/04-attachment-links.png" width="260" alt="Pokecode Note editor with three colored attachment outlines connected to individual Subblocks"></a></td>
   </tr>
   <tr>
-    <td align="center"><strong>5. Preview</strong><br><a href="screenshots/05-preview.png"><img src="screenshots/05-preview.png" width="260" alt="Pokecode Preview page with file selection and Start/Stop controls"></a></td>
-    <td align="center"><strong>6. Notes</strong><br><a href="screenshots/06-notes.png"><img src="screenshots/06-notes.png" width="260" alt="Pokecode Notes page with note cards and content previews"></a></td>
+    <td align="center"><strong>5. Projects</strong><br><a href="screenshots/05-projects.png"><img src="screenshots/05-projects.png" width="260" alt="Pokecode Projects drawer with note search, project counts and the outlined New project button"></a></td>
+    <td align="center"><strong>6. Conversations</strong><br><a href="screenshots/06-conversations.png"><img src="screenshots/06-conversations.png" width="260" alt="Pokecode Conversations drawer with search, project branches, session states and New chat"></a></td>
   </tr>
   <tr>
-    <td align="center"><strong>7. Launcher empty state</strong><br><a href="screenshots/07-launcher-empty.png"><img src="screenshots/07-launcher-empty.png" width="260" alt="Pokecode Launcher with no pending blocks"></a></td>
-    <td align="center"><strong>8. Time Capsule history</strong><br><a href="screenshots/08-time-capsule-history.png"><img src="screenshots/08-time-capsule-history.png" width="260" alt="Pokecode Time Capsule with dated, versioned submission snapshots"></a></td>
+    <td align="center"><strong>7. Time Capsule history</strong><br><a href="screenshots/07-time-capsule-history.png"><img src="screenshots/07-time-capsule-history.png" width="260" alt="Pokecode Time Capsule with outlined submission snapshots and the Export action"></a></td>
+    <td align="center"><strong>8. Time Capsule calendar</strong><br><a href="screenshots/08-time-capsule-calendar.png"><img src="screenshots/08-time-capsule-calendar.png" width="260" alt="Pokecode Time Capsule calendar with a selected date and its saved submissions"></a></td>
   </tr>
   <tr>
-    <td align="center"><strong>9. Launcher prompt group</strong><br><a href="screenshots/09-launcher-group.png"><img src="screenshots/09-launcher-group.png" width="260" alt="Pokecode Launcher with a pending versioned prompt group and send, copy, and share controls"></a></td>
-    <td align="center"><strong>10. Time Capsule calendar</strong><br><a href="screenshots/10-time-capsule-calendar.png"><img src="screenshots/10-time-capsule-calendar.png" width="260" alt="Pokecode Time Capsule calendar with saved submissions for the selected day"></a></td>
+    <td align="center"><strong>9. Chat actions</strong><br><a href="screenshots/09-chat-actions.png"><img src="screenshots/09-chat-actions.png" width="260" alt="Pokecode Chat actions for media, files, drawing, usage, Skills and Plugins, with permission choices"></a></td>
+    <td align="center"><strong>10. Voice Mode</strong><br><a href="screenshots/10-voice-mode.png"><img src="screenshots/10-voice-mode.png" width="260" alt="Pokecode Voice Mode connecting to a call with the green orb and hang-up control"></a></td>
   </tr>
   <tr>
-    <td align="center"><strong>11. Terminal animation</strong><br><a href="screenshots/11-terminal-space.jpg"><img src="screenshots/11-terminal-space.jpg" width="260" alt="Pokecode Terminal space-cabin animation with a live terminal on the laptop screen"></a></td>
-    <td align="center"><strong>12. Usage</strong><br><a href="screenshots/12-usage.jpg"><img src="screenshots/12-usage.jpg" width="260" alt="Pokecode Usage page with project and session filters, daily chart, and all-time token totals"></a></td>
+    <td align="center"><strong>11. Live Chat / Terminal switcher</strong><br><a href="screenshots/11-live-page-switcher.png"><img src="screenshots/11-live-page-switcher.png" width="260" alt="Pokecode Chat with proportional live Chat and Terminal preview cards"></a></td>
+    <td align="center"><strong>12. Codex Terminal</strong><br><a href="screenshots/12-terminal.png"><img src="screenshots/12-terminal.png" width="260" alt="Pokecode embedded Terminal running Codex with extra keys and the live page switcher open"></a></td>
   </tr>
   <tr>
-    <td align="center"><strong>13. Voice Mode</strong><br><a href="screenshots/13-voice-mode.jpg"><img src="screenshots/13-voice-mode.jpg" width="260" alt="Pokecode full-screen Voice Mode with a green orb while connecting to Codex"></a><br>Full-screen voice conversations with Codex.</td>
-    <td align="center"><strong>14. Attachments and Subblocks</strong><br><a href="screenshots/14-attachment-links.jpg"><img src="screenshots/14-attachment-links.jpg" width="260" alt="Pokecode Note editor with six colored attachment cards connected to three Subblocks"></a><br>Color-coded connections assign attachments to individual Subblocks.</td>
+    <td align="center"><strong>13. Terminal space cabin</strong><br><a href="screenshots/13-terminal-space.png"><img src="screenshots/13-terminal-space.png" width="260" alt="Pokecode space-cabin scene with the live terminal on the mascot laptop and page preview cards"></a></td>
+    <td align="center"><strong>14. Voice settings</strong><br><a href="screenshots/14-voice-settings.png"><img src="screenshots/14-voice-settings.png" width="260" alt="Pokecode Voice Mode settings showing the Sol voice, language choice and recording history"></a></td>
   </tr>
   <tr>
-    <td align="center" colspan="2"><strong>15. Live Chat / Terminal switcher</strong><br><a href="screenshots/15-live-page-switcher.jpg"><img src="screenshots/15-live-page-switcher.jpg" width="260" alt="Pokecode 0.1.8.1.3 Chat with compact live Chat and Terminal previews in the pull-up page switcher"></a><br>Pull up to switch pages while keeping the live preview menu open.</td>
+    <td align="center"><strong>15. Settings</strong><br><a href="screenshots/15-settings.png"><img src="screenshots/15-settings.png" width="260" alt="Pokecode Settings with appearance, language, account, Terminal, usage, backup and license controls"></a></td>
+    <td align="center"><strong>16. Terminal file access</strong><br><a href="screenshots/16-terminal-file-access.png"><img src="screenshots/16-terminal-file-access.png" width="260" alt="Pokecode Terminal settings with App sandbox only selected and the available phone file access modes"></a></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>17. Accounts</strong><br><a href="screenshots/17-accounts.png"><img src="screenshots/17-accounts.png" width="260" alt="Pokecode account settings with separate Codex and GitHub sign-out and account-switch controls"></a></td>
+    <td align="center"><strong>18. Trash</strong><br><a href="screenshots/18-trash.png"><img src="screenshots/18-trash.png" width="260" alt="Pokecode Trash with Notes and Blocks tabs and recovery and deletion controls"></a></td>
   </tr>
 </table>
 
