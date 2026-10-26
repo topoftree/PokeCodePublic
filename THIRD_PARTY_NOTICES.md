@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Current public release: **0.1.8.1.51**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-26**.
+Current public release: **0.1.8.1.58**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-26**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -13,6 +13,34 @@ The original review covers 15 distinct external production dependency declaratio
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes in v0.1.8.1.58 (since public v0.1.8.1.51)
+
+Production dependency declarations and versions are unchanged. Comparison with
+the public 0.1.8.1.51 APK confirms all **13 ARM64 native libraries**, **74 retained
+dependency version markers**, fonts, embedded runtime packages, source archives,
+AAPT2 and Gradle Wrapper retain their bytes. Changes to two Pokecode runtime
+helpers support Voice Mode language preferences, connector activity and web
+Preview selection; they do not introduce an external implementation.
+
+Five additional icon shapes (sun, moon, list-filter, arrow-down-wide-narrow and
+arrow-up-narrow-wide) use the same pinned **Lucide 1.61.0** revision and existing
+**ISC/MIT** grants. Selected navigation icons also use locally derived filled
+variants. The [existing Lucide attribution and license](third_party_licenses/lucide/README.md)
+remain applicable. Both Terminal rooms now use simplified generated artwork
+based on owner references; no external asset pack, font, audio or new runtime
+library was added.
+
+The offline **Copyright & licenses** viewer indexes existing notices and now
+includes the verbatim [AndroidX Startup 1.2.0 binary license](third_party_licenses/maven/androidx.startup__startup-runtime__1.2.0/binary/META-INF/androidx/startup/startup-runtime/LICENSE.txt)
+under **Apache-2.0**. Startup itself was already included; this is additional
+license text, not a dependency addition or upgrade. Existing license files are
+retained without rewriting.
+
+No newly introduced or changed GPL, AGPL, LGPL or other potentially conflicting
+third-party component was identified. Previously documented corresponding-source
+and integration, LGPL replacement, AAPT2 and Google SDK obligations remain
+unresolved; this delta review does not establish overall licensing clearance.
 
 ### Changes in v0.1.8.1.51 (since public v0.1.8.1.48)
 
