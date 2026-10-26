@@ -1,6 +1,6 @@
 # Third-party notices for Pokecode
 
-Current public release: **0.1.8.1.44**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-25**.
+Current public release: **0.1.8.1.51**. Original inventory review: **2026-09-09**; release changes reviewed **2026-10-26**.
 
 **Redistribution review remains incomplete.** This release retains the previously documented unresolved source-delivery, copyleft integration, and SDK obligations. This notice inventory is not a finding of legal compliance. Publishing the APK does not resolve or waive those obligations.
 
@@ -13,6 +13,41 @@ The original review covers 15 distinct external production dependency declaratio
 In the original v0.1.6.2.15 review, all 116 cached Android artifacts matched the SHA-256 of the corresponding publisher download, and R8 mapping showed original classes from 71 artifacts. Class absence does not prove that all inlined code or resources were removed. The inventory therefore conservatively includes the release inputs, with versions and original notices. It is not a claim that every class in each artifact is redistributed.
 
 The component rows below link to publisher sources and preserved notices. Some upstream copyright files cover more files than are present in the APK; preserving those files does not mean that every described upstream program is distributed.
+
+### Changes in v0.1.8.1.51 (since public v0.1.8.1.48)
+
+Functional icon artwork now uses **Lucide 1.61.0**, revision
+`c29c276f16590cf017126671535ad8c792be64d8`, under **ISC** and the included
+**MIT** grant for Feather-derived icons. Selected SVG geometry is converted to
+Android vectors and Compose icons; command/arc-flag spacing is normalized for
+Android parsers. The full upstream copyright and license text is preserved in
+[the Lucide notices](third_party_licenses/lucide/README.md) and inside the APK.
+The direct Material Icons Extended dependency is removed, with no replacement
+runtime library. Historical Material notices are retained for earlier releases.
+
+The APK now bundles unmodified **Inter** and **Noto Sans SC** variable TrueType
+fonts from Google Fonts under **SIL Open Font License 1.1**. Their complete
+copyright/license texts are supplied both here and in the APK; pinned upstream
+revisions and font hashes appear in [the font notices](third_party_licenses/fonts/README.md).
+The OFL permits bundling and commercial distribution with software, subject to
+its attribution and font-license conditions. These separate font grants do not
+license Pokecode's application source. No modified font binary is distributed.
+
+Comparison with the actual public 0.1.8.1.48 APK confirms that all **13 ARM64
+native libraries**, **40 runtime assets** and **74 retained dependency version
+markers** are byte-identical. Only the two Material Icons version markers were
+removed. No remaining production dependency was upgraded. Existing bootstrap,
+embedded packages, AAPT2, Gradle Wrapper, third-party source archives and license
+texts retain their bytes. Added assets are the Lucide/font notices; changed
+existing assets are the notice inventory and generated baseline profiles.
+The two font resources and converted Lucide icons are the new external artwork;
+other scene/brand assets are unchanged.
+
+No newly introduced or changed GPL, AGPL, LGPL or other potentially conflicting
+third-party component was identified in this delta. Previously documented
+corresponding-source/integration, LGPL replacement, AAPT2 and Google SDK
+obligations remain unresolved; this review does not establish overall licensing
+clearance. Existing license files and the SDK notice are retained.
 
 ### Changes in v0.1.8.1.44 (since public v0.1.8.1.18)
 
@@ -590,7 +625,7 @@ Each coordinate specifies the exact resolved version. Copyright holders remain t
 
 `javax.inject:1` has no license declaration in the retrieved POM; its source `Inject.java` explicitly grants Apache-2.0 and credits the JSR-330 Expert Group. The permission was verified from that source rather than guessed.
 
-AndroidX Graphics Path also contains native code and Apache-licensed math headers derived from AOSP/Filament. Source headers were inspected; the artifact is a byte match to the publisher. Exact native-source revision alignment remains a provenance check. Material icons supplied by Compose are covered by their component's Apache license. No standalone third-party font or model-weight file was found in the inspected release assets/runtime.
+AndroidX Graphics Path also contains native code and Apache-licensed math headers derived from AOSP/Filament. Source headers were inspected; the artifact is a byte match to the publisher. Exact native-source revision alignment remains a provenance check. Material icons supplied by Compose in earlier releases are covered by their component's Apache license; those two icon artifacts were removed in 0.1.8.1.49. Inter and Noto Sans SC were added in 0.1.8.1.51 as described above. No external model-weight file was found in the inspected release assets/runtime.
 
 ## Copied terminal modules
 
@@ -680,8 +715,10 @@ These are package records, not an additive count of entirely independent upstrea
 | --- | --- | --- |
 | Pokecode icon1/icon2 and derived system/adaptive/monochrome icons | Owner confirmed original icon artwork was ChatGPT-generated on 2026-09-09; system variants derive from that artwork | Owner-provided artwork; not assigned a third-party open-source license. This records supplied provenance, not a trademark or third-party-right warranty. |
 | Twelve UFO animation frames | Owner-supplied numbered sequence imported for v0.1.6.5.3, with cropping, transparency and scaling | Replaces the earlier six-frame artwork. No third-party open-source license is assigned; the older six-image ChatGPT confirmation is not treated as independent verification of this replacement sequence. |
-| Terminal desk and space-cabin scenes | Approved generated portrait/landscape artwork based on owner references, with independently authored animated vector limbs and stars | Pokecode artwork; no third-party open-source license is assigned. No external font, audio or asset pack is embedded. The Rive runtime retains its separate licenses above. |
-| Compose Material icons and standalone vectors | 1.7.8 release artifacts; Google Material Design Icons `forum` (outlined), adapted for the Block session button, [`mic`](https://github.com/google/material-design-icons/blob/master/src/av/mic/materialicons/24px.svg) / [`mic_off`](https://github.com/google/material-design-icons/blob/master/src/av/mic_off/materialicons/24px.svg) for Voice notifications, and the filled bookmark shape used by Preset | Apache-2.0; original component notices and full license text retained above. |
+| Terminal desk and space-cabin scenes | Approved generated portrait/landscape artwork based on owner references, with independently authored animated vector limbs and stars | Pokecode artwork; no third-party open-source license is assigned. No external font, audio or asset pack is embedded in these scenes. The Rive runtime retains its separate licenses above. |
+| Compose Material icons and standalone vectors (historical) | 1.7.8 release artifacts; Google Material Design Icons used before the Lucide migration in 0.1.8.1.49 | Apache-2.0; original component notices and full license text retained above for earlier releases. |
+| Lucide functional icons | 1.61.0; pinned upstream SVG shapes converted for Android | ISC; Feather-derived icons retain MIT. [Copyright, provenance and full license](third_party_licenses/lucide/README.md). |
+| Inter and Noto Sans SC | Unmodified variable TrueType fonts; pinned Google Fonts revisions | SIL OFL 1.1; [provenance, hashes and complete copyright/license texts](third_party_licenses/fonts/README.md). |
 | OpenAI and GitHub brand vectors | Simple Icons 14.15.0; converted to Android vectors | CC0-1.0; [provenance and full text](third_party_licenses/simple-icons/README.md). Trademark rights are separate. |
 | Codex brand vector | Lobe Icons commit `82e641b4fece9d1028a127149af9ded00df5ac0c`; converted to an Android vector with expanded SVG arc parameters | MIT; [provenance and full text](third_party_licenses/lobe-icons/README.md). Trademark rights are separate. |
 | Release action GitHub/tag PNG | Owner-supplied transparent artwork, added in v0.1.7.9.9.1 and tinted by the application | No third-party open-source license assigned; supplied provenance does not establish trademark or third-party-right clearance. |
